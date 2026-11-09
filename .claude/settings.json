@@ -1,0 +1,19 @@
+{
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": { "source": "github", "repo": "anthropics/claude-plugins-official" }
+    },
+    "omc": {
+      "source": { "source": "github", "repo": "Yeachan-Heo/oh-my-claudecode" }
+    },
+    "chrome-devtools-plugins": {
+      "source": { "source": "github", "repo": "ChromeDevTools/chrome-devtools-mcp" }
+    }
+  },
+  "enabledPlugins": {
+    "supabase@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true,
+    "oh-my-claudecode@omc": true,
+    "chrome-devtools-mcp@chrome-devtools-plugins": true
+  }
+}
