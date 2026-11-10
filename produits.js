@@ -15,7 +15,7 @@ window.CATALOGUE = [
 {"id":13,"nom":"Extracteur D'Oxygene 10L","prix":530000,"cat":"Équipements & Appareils","desc":"Concentrateur d'oxygène 10 litres/min","photo":"images/concentrateur-oxygene.jpg"},
 {"id":14,"nom":"Film ECG","prix":4500,"cat":"Équipements & Appareils","desc":"Rouleau de film thermique pour ECG","photo":"images/produit-14-1794295915981.jpg"},
 {"id":15,"nom":"Film écho Sony type 1 Rouleaux","prix":3500,"cat":"Équipements & Appareils","desc":"Film Sony pour imprimante échographe type 1","photo":"images/produit-15-1794295934526.jpg"},
-{"id":16,"nom":"Film echo type 5 Rouleaux","prix":6000,"cat":"Équipements & Appareils","desc":"Film pour imprimante échographe type 5"},
+{"id":16,"nom":"Film echo type 5 Rouleaux","prix":6000,"cat":"Équipements & Appareils","desc":"Film pour imprimante échographe type 5","photo":"images/produit-16-1794295987875.jpg"},
 {"id":17,"nom":"Gel écho 5L","prix":10000,"cat":"Équipements & Appareils","desc":"Gel de transmission échographique 5 litres"},
 {"id":18,"nom":"HBA1C Pour Cassettes","prix":65000,"cat":"Équipements & Appareils","desc":"Réactif HbA1c pour cassettes — diabète"},
 {"id":19,"nom":"Hemocue Bio aiD appareil","prix":25000,"cat":"Équipements & Appareils","desc":"Analyseur d'hémoglobine Bio aiD"},
