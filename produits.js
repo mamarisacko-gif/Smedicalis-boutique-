@@ -11,7 +11,7 @@ window.CATALOGUE = [
 {"id":9,"nom":"Compteur Leucocytaire","prix":45000,"cat":"Équipements & Appareils","desc":"Compteur de globules blancs différentiel","photo":"images/produit-9-1794295685685.jpg"},
 {"id":10,"nom":"Détecteur de veine","prix":17500,"cat":"Équipements & Appareils","desc":"Localisateur de veine à lumière infrarouge","photo":"images/produit-10-1794295377805.jpg"},
 {"id":11,"nom":"Doppler foetal grand","prix":30000,"cat":"Équipements & Appareils","desc":"Doppler fœtal grand modèle","photo":"images/produit-11-1794295768363.jpg"},
-{"id":12,"nom":"Doppler foetal PETIT avec gel écho","prix":12500,"cat":"Équipements & Appareils","desc":"Doppler fœtal compact + gel inclus","photo":"images/doppler-foetal.jpg"},
+{"id":12,"nom":"Doppler foetal PETIT avec gel écho","prix":10000,"cat":"Équipements & Appareils","desc":"Doppler fœtal compact + gel inclus","photo":"images/produit-12-1794295789934.jpg"},
 {"id":13,"nom":"Extracteur D'Oxygene 10L","prix":530000,"cat":"Équipements & Appareils","desc":"Concentrateur d'oxygène 10 litres/min","photo":"images/concentrateur-oxygene.jpg"},
 {"id":14,"nom":"Film ECG","prix":4500,"cat":"Équipements & Appareils","desc":"Rouleau de film thermique pour ECG"},
 {"id":15,"nom":"Film écho Sony type 1 Rouleaux","prix":3500,"cat":"Équipements & Appareils","desc":"Film Sony pour imprimante échographe type 1"},
