@@ -100,7 +100,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 
 /* GRID */
-.grid{padding:8px 14px 60px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.grid{padding:8px 14px 24px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .prod{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .12s,box-shadow .12s;}
 .prod:active{transform:scale(.98);}
 .prod.in-cart{border-color:var(--orange);border-width:2px;box-shadow:0 4px 18px rgba(245,135,31,.2);}
@@ -164,10 +164,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .ic{fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;}
 .prod-img{position:relative;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;background:var(--t-bg,#EAF1FA);color:var(--t-fg,#1B4D89);overflow:hidden;}
 .prod-img .ic{width:38%;height:62%;opacity:.9;}
-.prod-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#fff;}
+.prod-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;}
 .ci-ico{color:var(--t-fg,#1B4D89);background:var(--t-bg,#EAF1FA);position:relative;overflow:hidden;}
 .ci-ico .ic{width:26px;height:26px;}
-.ci-ico img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.ci-ico img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;}
+.foot{text-align:center;font-size:11.5px;color:var(--muted);padding:0 var(--gut) 30px;line-height:1.6;}
+.foot a{color:var(--blue);}
 
 /* ═══ KITS ═══ */
 .promos{display:grid;grid-template-columns:1fr;gap:10px;padding:14px var(--gut) 0;}
@@ -464,6 +466,7 @@ Pèse adulte - 1"
   </select>
 </div>
 <div class="grid" id="grid"></div>
+<footer class="foot">Photos et illustrations non contractuelles : le modèle livré peut différer. · <a href="credits.html">Crédits photos</a></footer>
 
 <div class="cart-bar">
   <div class="cart-info">
@@ -962,6 +965,61 @@ const CATS = ['Tous', ...[...new Set(PRODUITS.map(p=>p.cat))]];
 // Exemple :  12:'images/doppler-petit.jpg',  'kit-etu-essentiel':'images/kit-etudiant.jpg',
 // Sans photo, le produit affiche automatiquement une illustration.
 const PHOTOS = {
+  // Photos libres de droits (Wikimedia Commons) — auteurs et licences dans credits.html
+  39:'images/stethoscope.jpg',
+  27:'images/tensiometre-manuel.jpg',
+  40:'images/tensiometre-manuel.jpg',
+  41:'images/tensiometre-manuel.jpg',
+  44:'images/tensiometre-manuel.jpg',
+  43:'images/tensiometre-electronique.jpg',
+  45:'images/tensiometre-electronique.jpg',
+  186:'images/tensiometre-electronique.jpg',
+  42:'images/tensiometre-poignet.jpg',
+  47:'images/thermometre-digital.jpg',
+  48:'images/thermometre-digital.jpg',
+  152:'images/thermometre-digital.jpg',
+  46:'images/thermometre-mercure.jpg',
+  36:'images/saturometre.jpg',
+  34:'images/otoscope.jpg',
+  53:'images/bandelettes-glycemie.jpg',
+  54:'images/bandelettes-glycemie.jpg',
+  55:'images/bandelettes-glycemie.jpg',
+  6:'images/centrifugeuse.jpg',
+  7:'images/centrifugeuse.jpg',
+  108:'images/seringue.jpg',
+  109:'images/seringue.jpg',
+  110:'images/seringue-insuline.jpg',
+  98:'images/gants-steriles.jpg',
+  130:'images/fauteuil-roulant.jpg',
+  183:'images/bequilles.jpg',
+  185:'images/deambulateur.jpg',
+  11:'images/doppler-foetal.jpg',
+  12:'images/doppler-foetal.jpg',
+  1:'images/echographe.jpg',
+  151:'images/micropipette.jpg',
+  94:'images/embouts-pipette.jpg',
+  95:'images/embouts-pipette.jpg',
+  167:'images/stethoscope-pinard.jpg',
+  29:'images/ballon-reanimation.jpg',
+  153:'images/ballon-reanimation.jpg',
+  32:'images/laryngoscope.jpg',
+  170:'images/marteau-reflexes.jpg',
+  100:'images/lames-bistouri.jpg',
+  97:'images/fil-suture.jpg',
+  118:'images/fil-suture.jpg',
+  119:'images/fil-suture.jpg',
+  120:'images/fil-suture.jpg',
+  121:'images/fil-suture.jpg',
+  90:'images/abaisse-langue.jpg',
+  112:'images/sparadrap.jpg',
+  155:'images/haricot.jpg',
+  169:'images/metre-ruban.jpg',
+  140:'images/bonnet-chirurgical.jpg',
+  33:'images/lunettes-protection.jpg',
+  127:'images/boite-securite.jpg',
+  13:'images/concentrateur-oxygene.jpg',
+  132:'images/lit-medicalise.jpg',
+  180:'images/brancard.jpg',
 };
 
 // Illustration choisie d'après le nom du produit (première règle qui correspond)
