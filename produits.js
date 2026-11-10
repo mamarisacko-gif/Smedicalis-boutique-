@@ -6,7 +6,7 @@ window.CATALOGUE = [
 {"id":4,"nom":"Bandelette hemocue 301 B/50","prix":20000,"cat":"Équipements & Appareils","desc":"Bandelettes Hemocue 301, boîte de 50\n1 boîte à 20.000f et 4 boîte à 70.000f","photo":"images/produit-4-1794295242500.jpg"},
 {"id":5,"nom":"Bistouri électrique","prix":900000,"cat":"Équipements & Appareils","desc":"Bistouri électrique chirurgical"},
 {"id":6,"nom":"Centrifugeuse 12 trous","prix":115000,"cat":"Équipements & Appareils","desc":"Centrifugeuse de laboratoire 12 places","photo":"images/centrifugeuse.jpg"},
-{"id":7,"nom":"Centrifugeuse 6 trous","prix":55000,"cat":"Équipements & Appareils","desc":"Centrifugeuse de laboratoire 6 places","photo":"images/centrifugeuse.jpg"},
+{"id":7,"nom":"Centrifugeuse 6 trous","prix":50000,"cat":"Équipements & Appareils","desc":"Centrifugeuse de laboratoire 6 places","photo":"images/produit-7-1794295412149.jpg"},
 {"id":8,"nom":"Coagulometre","prix":800000,"cat":"Équipements & Appareils","desc":"Analyseur de coagulation"},
 {"id":9,"nom":"Compteur Leucocytaire","prix":45000,"cat":"Équipements & Appareils","desc":"Compteur de globules blancs différentiel"},
 {"id":10,"nom":"Détecteur de veine","prix":17500,"cat":"Équipements & Appareils","desc":"Localisateur de veine à lumière infrarouge","photo":"images/produit-10-1794295377805.jpg"},
