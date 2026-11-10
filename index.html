@@ -466,7 +466,7 @@ Pèse adulte - 1"
   </select>
 </div>
 <div class="grid" id="grid"></div>
-<footer class="foot">Photos et illustrations non contractuelles : le modèle livré peut différer. · <a href="credits.html">Crédits photos</a></footer>
+<footer class="foot">Photos et illustrations non contractuelles : le modèle livré peut différer. · <a href="credits.html">Crédits photos</a> · <a href="admin.html" rel="nofollow">Gestion</a></footer>
 
 <div class="cart-bar">
   <div class="cart-info">
@@ -510,6 +510,7 @@ Pèse adulte - 1"
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="produits.js"></script>
 <script>
 // ═══ CONFIG ═══
 // Numéro WhatsApp Business de Smedicalis (format international sans +)
@@ -761,265 +762,15 @@ const CAT_CHIP_ICONS = {
 // Mets l'id du produit et l'URL (ou data-URI) de l'image. Ex: {12:'https://...jpg', 30:'data:image...'}
 // Les produits sans photo afficheront automatiquement l'icône de leur catégorie.
 
-const PRODUITS = [
-// ─── Équipements & Appareils ───
-{id:0,nom:'Appareil ECG',prix:225000,cat:'Équipements & Appareils',desc:'Électrocardiographe professionnel'},
-{id:1,nom:'Appareil écho EDAN',prix:2050000,cat:'Équipements & Appareils',desc:'Échographe de marque EDAN'},
-{id:2,nom:'Appareil Hémocue 301',prix:300000,cat:'Équipements & Appareils',desc:'Analyseur d\'hémoglobine portable'},
-{id:3,nom:'Bac de coloration',prix:30000,cat:'Équipements & Appareils',desc:'Pour colorations en laboratoire'},
-{id:4,nom:'Bandelette hemocue 301 B/50',prix:20000,cat:'Équipements & Appareils',desc:'Bandelettes Hemocue 301, boîte de 50'},
-{id:5,nom:'Bistouri électrique',prix:900000,cat:'Équipements & Appareils',desc:'Bistouri électrique chirurgical'},
-{id:6,nom:'Centrifugeuse 12 trous',prix:115000,cat:'Équipements & Appareils',desc:'Centrifugeuse de laboratoire 12 places'},
-{id:7,nom:'Centrifugeuse 6 trous',prix:55000,cat:'Équipements & Appareils',desc:'Centrifugeuse de laboratoire 6 places'},
-{id:8,nom:'Coagulometre',prix:800000,cat:'Équipements & Appareils',desc:'Analyseur de coagulation'},
-{id:9,nom:'Compteur Leucocytaire',prix:45000,cat:'Équipements & Appareils',desc:'Compteur de globules blancs différentiel'},
-{id:10,nom:'Détecteur de veine',prix:17500,cat:'Équipements & Appareils',desc:'Localisateur de veine à lumière infrarouge'},
-{id:11,nom:'Doppler foetal grand',prix:20000,cat:'Équipements & Appareils',desc:'Doppler fœtal grand modèle'},
-{id:12,nom:'Doppler foetal PETIT avec gel écho',prix:12500,cat:'Équipements & Appareils',desc:'Doppler fœtal compact + gel inclus'},
-{id:13,nom:'Extracteur D\'Oxygene 10L',prix:530000,cat:'Équipements & Appareils',desc:'Concentrateur d\'oxygène 10 litres/min'},
-{id:14,nom:'Film ECG',prix:4500,cat:'Équipements & Appareils',desc:'Rouleau de film thermique pour ECG'},
-{id:15,nom:'Film écho Sony type 1 Rouleaux',prix:3500,cat:'Équipements & Appareils',desc:'Film Sony pour imprimante échographe type 1'},
-{id:16,nom:'Film echo type 5 Rouleaux',prix:6000,cat:'Équipements & Appareils',desc:'Film pour imprimante échographe type 5'},
-{id:17,nom:'Gel écho 5L',prix:10000,cat:'Équipements & Appareils',desc:'Gel de transmission échographique 5 litres'},
-{id:18,nom:'HBA1C Pour Cassettes',prix:65000,cat:'Équipements & Appareils',desc:'Réactif HbA1c pour cassettes — diabète'},
-{id:19,nom:'Hemocue Bio aiD appareil',prix:25000,cat:'Équipements & Appareils',desc:'Analyseur d\'hémoglobine Bio aiD'},
-{id:20,nom:'Hemocue Bio aiD bandelette B/50',prix:9000,cat:'Équipements & Appareils',desc:'Bandelettes Bio aiD, boîte de 50'},
-{id:21,nom:'Incubateur 80L',prix:750000,cat:'Équipements & Appareils',desc:'Incubateur de laboratoire 80 litres'},
-{id:22,nom:'Lame (Microscope)',prix:1250,cat:'Équipements & Appareils',desc:'Lames porte-objet pour microscope'},
-{id:23,nom:'Microscope binoculaire OLYMPUS',prix:135000,cat:'Équipements & Appareils',desc:'Microscope binoculaire de marque Olympus'},
-{id:24,nom:'Négatoscope',prix:105000,cat:'Équipements & Appareils',desc:'Négatoscope pour lecture de radiographies'},
-{id:25,nom:'Stérilisateur 22L (AUTOCLAVE)',prix:160000,cat:'Équipements & Appareils',desc:'Autoclave stérilisateur 22 litres'},
-{id:26,nom:'Stérilisateur 18L',prix:145000,cat:'Équipements & Appareils',desc:'Autoclave stérilisateur 18 litres'},
-{id:27,nom:'Vaquez Laubry',prix:65000,cat:'Équipements & Appareils',desc:'Tensiomètre manomètre Vaquez Laubry'},
-// ─── Diagnostic & Instruments ───
-{id:28,nom:'Aspirateur manuel intra-utérin (AMIU)',prix:15000,cat:'Diagnostic & Instruments',desc:'Dispositif d\'aspiration manuelle intra-utérine'},
-{id:29,nom:'Ballon de reanimation adulte',prix:17500,cat:'Diagnostic & Instruments',desc:'Ballon AMBU pour réanimation adulte'},
-{id:30,nom:'Lampe frontale à pile',prix:3500,cat:'Diagnostic & Instruments',desc:'Lampe frontale chirurgicale à piles'},
-{id:31,nom:'Lampe frontale rechargeable',prix:5000,cat:'Diagnostic & Instruments',desc:'Lampe frontale chirurgicale rechargeable'},
-{id:32,nom:'Laryngoscope',prix:3500,cat:'Diagnostic & Instruments',desc:'Laryngoscope pour intubation'},
-{id:33,nom:'Lunette chirurgicale',prix:1500,cat:'Diagnostic & Instruments',desc:'Lunettes de protection chirurgicale'},
-{id:34,nom:'Otoscope simple',prix:5000,cat:'Diagnostic & Instruments',desc:'Otoscope pour examen auriculaire'},
-{id:35,nom:'Otoscope avec caméra',prix:9000,cat:'Diagnostic & Instruments',desc:'Otoscope avec caméra intégrée'},
-{id:36,nom:'Saturometre (Blanc)',prix:5000,cat:'Diagnostic & Instruments',desc:'Oxymètre de pouls, modèle blanc'},
-{id:37,nom:'Saturomètre avec cable',prix:65000,cat:'Diagnostic & Instruments',desc:'Oxymètre professionnel avec câble patient'},
-{id:38,nom:'Spéculum Métallique Adulte',prix:7500,cat:'Diagnostic & Instruments',desc:'Spéculum vaginal métallique, taille adulte'},
-{id:39,nom:'Stéthoscope simple',prix:5000,cat:'Diagnostic & Instruments',desc:'Stéthoscope standard biauriculaire'},
-{id:40,nom:'Tensiomètre Manuel professionnel Honsun',prix:17500,cat:'Diagnostic & Instruments',desc:'Tensiomètre à mercure professionnel Honsun'},
-{id:41,nom:'Tensiomètre Manuel avec stethoscope',prix:9000,cat:'Diagnostic & Instruments',desc:'Tensiomètre manuel + stéthoscope inclus'},
-{id:42,nom:'Tensiomètre Électronique POIGNET',prix:10000,cat:'Diagnostic & Instruments',desc:'Tensiomètre électronique de poignet'},
-{id:43,nom:'Tensiometre électronique Rechargeable',prix:10000,cat:'Diagnostic & Instruments',desc:'Tensiomètre électronique rechargeable USB'},
-{id:186,nom:'Tensiomètre Électronique Écran Couleur',prix:15000,cat:'Diagnostic & Instruments',desc:'Bras • Écran LCD rétroéclairé 3 couleurs (normal/élevé/hypertension) • Annonce vocale • Double mémoire 2×198 • Rechargeable USB + piles AAA incluses • Brassard 22-36cm'},
-{id:44,nom:'Tensiomètre Manuel Spengler triple brassard',prix:60000,cat:'Diagnostic & Instruments',desc:'Tensiomètre Spengler 3 tailles de brassard'},
-{id:45,nom:'Tensiomètre Rechargeable BP 103H',prix:20000,cat:'Diagnostic & Instruments',desc:'Tensiomètre électronique BP 103H rechargeable'},
-{id:46,nom:'Thermomètre à mercure',prix:1000,cat:'Diagnostic & Instruments',desc:'Thermomètre clinique à mercure'},
-{id:47,nom:'Thermomètre bout flexible',prix:1500,cat:'Diagnostic & Instruments',desc:'Thermomètre digital à sonde flexible'},
-{id:48,nom:'Thermomètre simple bout dur',prix:1000,cat:'Diagnostic & Instruments',desc:'Thermomètre digital sonde rigide'},
-{id:49,nom:'Thermomètre Spengler',prix:6000,cat:'Diagnostic & Instruments',desc:'Thermomètre professionnel Spengler'},
-// ─── Tests & Réactifs labo ───
-{id:50,nom:'Ag Hbs bandelette b/50',prix:10000,cat:'Tests & Réactifs labo',desc:'Test hépatite B, bandelettes, boîte 50'},
-{id:51,nom:'Ag HbS cassette b/40',prix:13500,cat:'Tests & Réactifs labo',desc:'Test hépatite B, cassettes, boîte 40'},
-{id:52,nom:'ASLO Latex',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif antistreptolysine O en latex'},
-{id:53,nom:'Bandelette One Touch',prix:7500,cat:'Tests & Réactifs labo',desc:'Bandelettes glycémie One Touch'},
-{id:54,nom:'Bandelette Sinocare Accu-2 B/50 (rouge)',prix:7500,cat:'Tests & Réactifs labo',desc:'Bandelettes glucomètre Accu-2, boîte 50'},
-{id:55,nom:'Bandelette sinocare Angel B/50 (bleu)',prix:7000,cat:'Tests & Réactifs labo',desc:'Bandelettes glucomètre Angel, boîte 50'},
-{id:56,nom:'BHCG urinaire B/50 (test grossesse)',prix:2500,cat:'Tests & Réactifs labo',desc:'Tests de grossesse urinaires, boîte 50'},
-{id:57,nom:'BW/syphilis bandelette B/50',prix:10000,cat:'Tests & Réactifs labo',desc:'Test syphilis en bandelette, boîte 50'},
-{id:58,nom:'BW/syphilis cassette b/40 IgG IgM',prix:12500,cat:'Tests & Réactifs labo',desc:'Test syphilis cassette IgG/IgM, boîte 40'},
-{id:59,nom:'Chlamydia cassette B25',prix:13500,cat:'Tests & Réactifs labo',desc:'Test rapide Chlamydia, boîte 25'},
-{id:60,nom:'Chlore 2X50ml latex',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif chlore en latex, 2x50 ml'},
-{id:61,nom:'Creatinine FK Kinetic 2X50ml LATEX',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif créatinine cinétique, 2x50 ml'},
-{id:62,nom:'CRP Latex',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif protéine C-réactive en latex'},
-{id:63,nom:'Dengue IGG/IGM/NS1 B/25',prix:22500,cat:'Tests & Réactifs labo',desc:'Test rapide dengue IgG/IgM/NS1, boîte 25'},
-{id:64,nom:'Diluant 20L',prix:50000,cat:'Tests & Réactifs labo',desc:'Diluant pour analyseur hématologique, 20L'},
-{id:65,nom:'Giemsa stain 500ML',prix:15000,cat:'Tests & Réactifs labo',desc:'Colorant Giemsa pour frottis sanguin, 500 ml'},
-{id:66,nom:'Glucometre sinocare angel (bleu)',prix:8000,cat:'Tests & Réactifs labo',desc:'Glucomètre Sinocare Angel, modèle bleu'},
-{id:67,nom:'Glucomètre Sinocare Accu-2 (rouge)',prix:8000,cat:'Tests & Réactifs labo',desc:'Glucomètre Sinocare Accu-2, modèle rouge'},
-{id:68,nom:'Glucose 5X100ml LATEX',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif glucose en latex, 5x100 ml'},
-{id:69,nom:'Groupage rhesus 4X10ml LATEX',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif groupage sanguin ABO/Rh, 4x10 ml'},
-{id:70,nom:'HCV bandelette b/50',prix:12500,cat:'Tests & Réactifs labo',desc:'Test hépatite C en bandelette, boîte 50'},
-{id:71,nom:'HCV test cassette B/40',prix:12500,cat:'Tests & Réactifs labo',desc:'Test hépatite C en cassette, boîte 40'},
-{id:72,nom:'Helicobacter pylori cassette B/40',prix:12500,cat:'Tests & Réactifs labo',desc:'Test H. pylori sur sang, cassette boîte 40'},
-{id:73,nom:'HIV cassette BTE/40',prix:15000,cat:'Tests & Réactifs labo',desc:'Test VIH rapide en cassette, boîte 40'},
-{id:74,nom:'Huile à immersion 10ml LATEX',prix:10000,cat:'Tests & Réactifs labo',desc:'Huile d\'immersion pour microscope, 10 ml'},
-{id:75,nom:'Lyse',prix:32500,cat:'Tests & Réactifs labo',desc:'Réactif lyse pour hématolyseur'},
-{id:76,nom:'Magnésium 5X10ml latex',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif magnésium en latex, 5x10 ml'},
-{id:77,nom:'One Touch Call',prix:9000,cat:'Tests & Réactifs labo',desc:'Lecteur de glycémie One Touch Call'},
-{id:78,nom:'Potassium LATEX',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif potassium en latex'},
-{id:79,nom:'RPR Latex',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif RPR pour syphilis en latex'},
-{id:80,nom:'Rubéole cassette B/40',prix:12500,cat:'Tests & Réactifs labo',desc:'Test rubéole en cassette, boîte 40'},
-{id:81,nom:'Sodium Latex',prix:30000,cat:'Tests & Réactifs labo',desc:'Réactif sodium en latex'},
-{id:82,nom:'Test d\'Widal 8X5ml Latex',prix:12500,cat:'Tests & Réactifs labo',desc:'Réactif Widal fièvre typhoïde, 8x5 ml'},
-{id:83,nom:'Toxo Cassette B/40',prix:15000,cat:'Tests & Réactifs labo',desc:'Test toxoplasmose en cassette, boîte 40'},
-{id:84,nom:'Transat GOT',prix:13500,cat:'Tests & Réactifs labo',desc:'Réactif transaminases GOT (ASAT)'},
-{id:85,nom:'Transat GPT',prix:13500,cat:'Tests & Réactifs labo',desc:'Réactif transaminases GPT (ALAT)'},
-{id:86,nom:'Triglycérides 4X50ml latex',prix:15000,cat:'Tests & Réactifs labo',desc:'Réactif triglycérides en latex, 4x50 ml'},
-{id:87,nom:'Tube à hémolyse',prix:12500,cat:'Tests & Réactifs labo',desc:'Tubes à hémolyse pour laboratoire'},
-{id:88,nom:'Typhoide bandelette bte/50',prix:9000,cat:'Tests & Réactifs labo',desc:'Test typhoïde en bandelette, boîte 50'},
-{id:89,nom:'Typhoide cassette b/40',prix:12500,cat:'Tests & Réactifs labo',desc:'Test typhoïde en cassette, boîte 40'},
-// ─── Consommables ───
-{id:90,nom:'Abaisse langue B/100',prix:3000,cat:'Consommables',desc:'Abaisse-langues jetables, boîte de 100'},
-{id:91,nom:'Bande simple B/12',prix:1000,cat:'Consommables',desc:'Bandes de gaze simple, boîte de 12'},
-{id:92,nom:'Clamp cordon',prix:9000,cat:'Consommables',desc:'Clamp de cordon ombilical pour nouveau-né'},
-{id:93,nom:'Écouvillon',prix:7500,cat:'Consommables',desc:'Écouvillons de prélèvement stériles'},
-{id:94,nom:'Embout Bleu',prix:6000,cat:'Consommables',desc:'Embouts pipette bleus (grande taille)'},
-{id:95,nom:'Embout jaune',prix:5000,cat:'Consommables',desc:'Embouts pipette jaunes (petite taille)'},
-{id:96,nom:'EPI Epicrânienne',prix:3250,cat:'Consommables',desc:'Perfuseur à ailettes (épicrânienne)'},
-{id:97,nom:'Fil à peau',prix:4500,cat:'Consommables',desc:'Fils de suture cutanée non résorbables'},
-{id:98,nom:'Gant Stérile 7/2 B/50 paires',prix:9000,cat:'Consommables',desc:'Gants stériles taille 7,5 — boîte 50 paires'},
-{id:99,nom:'Garrot Bleu',prix:1000,cat:'Consommables',desc:'Garrot élastique pour prise de sang'},
-{id:100,nom:'Lame de Bistouri',prix:3000,cat:'Consommables',desc:'Lames de bistouri chirurgicales jetables'},
-{id:101,nom:'Lamelle microscopique',prix:1500,cat:'Consommables',desc:'Lamelles couvre-objet pour microscope'},
-{id:102,nom:'Lancette Sinocare',prix:1000,cat:'Consommables',desc:'Lancettes stériles pour autopiqueur'},
-{id:103,nom:'Perfuseur B/25',prix:2500,cat:'Consommables',desc:'Perfuseur avec filtre, boîte de 25'},
-{id:104,nom:'Perfuseur B/50',prix:6000,cat:'Consommables',desc:'Perfuseur avec filtre, boîte de 50'},
-{id:105,nom:'Poche de sang simple bte/100',prix:80000,cat:'Consommables',desc:'Poches de collecte sang, boîte 100'},
-{id:106,nom:'Poche de sang — à l\'unité',prix:1500,cat:'Consommables',desc:'Poche de collecte sang, vendue à l\'unité'},
-{id:107,nom:'Porte lame',prix:12500,cat:'Consommables',desc:'Porte-lame de microscope métallique'},
-{id:108,nom:'Seringue 10 CC bte/100',prix:3500,cat:'Consommables',desc:'Seringues 10 ml stériles, boîte de 100'},
-{id:109,nom:'Seringue 5 CC bte/100',prix:3000,cat:'Consommables',desc:'Seringues 5 ml stériles, boîte de 100'},
-{id:110,nom:'Seringue insuline bte/100',prix:5000,cat:'Consommables',desc:'Seringues à insuline 1 ml, boîte de 100'},
-{id:111,nom:'Sonde urinaire CH16 B/10',prix:6000,cat:'Consommables',desc:'Sonde urinaire Foley CH16, boîte de 10'},
-{id:112,nom:'Sparadrap',prix:2500,cat:'Consommables',desc:'Sparadrap adhésif chirurgical (rouleau)'},
-{id:113,nom:'Tube à hématocrite',prix:5000,cat:'Consommables',desc:'Tubes capillaires hématocrite (boîte)'},
-{id:114,nom:'Tube EDTA (Verre)',prix:5000,cat:'Consommables',desc:'Tubes EDTA en verre pour prélèvement sanguin'},
-{id:115,nom:'Tube sec en verre (rouge)',prix:5000,cat:'Consommables',desc:'Tubes secs en verre, bouchon rouge'},
-{id:116,nom:'Tube VS',prix:22500,cat:'Consommables',desc:'Tubes pour vitesse de sédimentation'},
-{id:117,nom:'Tube heparine',prix:10000,cat:'Consommables',desc:'Tubes héparinés pour biochimie'},
-{id:118,nom:'Vicryl 0° B/12',prix:6500,cat:'Consommables',desc:'Fils Vicryl résorbables 0, boîte 12'},
-{id:119,nom:'Vicryl 1° B/12',prix:6500,cat:'Consommables',desc:'Fils Vicryl résorbables 1, boîte 12'},
-{id:120,nom:'Vicryl 2/0° B/12',prix:6500,cat:'Consommables',desc:'Fils Vicryl résorbables 2/0, boîte 12'},
-{id:121,nom:'Vicryl 3/0° B/12',prix:6500,cat:'Consommables',desc:'Fils Vicryl résorbables 3/0, boîte 12'},
-// ─── Mobilier médical ───
-{id:122,nom:'Balance adulte électronique en verre',prix:10000,cat:'Mobilier médical',desc:'Balance pèse-personne électronique'},
-{id:123,nom:'Balance Seca Double Ecran',prix:205000,cat:'Mobilier médical',desc:'Balance professionnelle Seca double affichage'},
-{id:124,nom:'Balance Seca Mécanique',prix:190000,cat:'Mobilier médical',desc:'Balance médicale mécanique Seca'},
-{id:125,nom:'Boite à pansement',prix:10000,cat:'Mobilier médical',desc:'Boîte métallique à pansements'},
-{id:126,nom:'Boite d\'accouchement',prix:15000,cat:'Mobilier médical',desc:'Kit complet pour accouchement'},
-{id:127,nom:'Boite de sécurité',prix:500,cat:'Mobilier médical',desc:'Conteneur jaune pour déchets piquants'},
-{id:128,nom:'Chariot 2 étagères Industriel',prix:46500,cat:'Mobilier médical',desc:'Chariot médical inox 2 étagères, modèle industriel'},
-{id:129,nom:'Chariot 2 étagères Local',prix:20500,cat:'Mobilier médical',desc:'Chariot médical 2 étagères, fabrication locale'},
-{id:130,nom:'Fauteuil roulant noir',prix:95000,cat:'Mobilier médical',desc:'Fauteuil roulant standard, couleur noire'},
-{id:131,nom:'Lit d\'Hospitalisation (Local)',prix:45000,cat:'Mobilier médical',desc:'Lit d\'hôpital fabrication locale'},
-{id:132,nom:'Lit médicalisé',prix:750000,cat:'Mobilier médical',desc:'Lit médicalisé réglable électriquement'},
-{id:133,nom:'Pèse Adulte',prix:17500,cat:'Mobilier médical',desc:'Pèse-personne mécanique médical'},
-{id:134,nom:'Poubelle 30L',prix:5000,cat:'Mobilier médical',desc:'Poubelle médicale 30 litres avec pédale'},
-{id:135,nom:'Table d\'accouchement Industrielle',prix:175000,cat:'Mobilier médical',desc:'Table gynécologique accouchement inox'},
-{id:136,nom:'Table de consultation',prix:85000,cat:'Mobilier médical',desc:'Table de consultation médicale standard'},
-{id:137,nom:'Table de consultation industrielle',prix:150000,cat:'Mobilier médical',desc:'Table de consultation médicale inox industrielle'},
-{id:138,nom:'Table de soin Locale (pansement)',prix:85000,cat:'Mobilier médical',desc:'Table de soin/pansement fabrication locale'},
-// ─── Protection & Habillement ───
-{id:139,nom:'Blouse blanche Simple',prix:4000,cat:'Protection & Habillement',desc:'Blouse médicale blanche unisexe'},
-{id:140,nom:'Bonnet chirurgical',prix:3000,cat:'Protection & Habillement',desc:'Bonnet chirurgical jetable'},
-{id:141,nom:'Chaussure de bloc',prix:5000,cat:'Protection & Habillement',desc:'Sabots de bloc chirurgical'},
-// ─── Autres matériels ───
-{id:142,nom:'Alcool 1L',prix:2000,cat:'Autres matériels',desc:'Alcool éthylique 70° pour désinfection, 1L'},
-{id:143,nom:'Tube Citraté',prix:10000,cat:'Autres matériels',desc:'Tubes citrés pour coagulation'},
-{id:144,nom:'Échographe portatif Dawei 1 sonde',prix:825000,cat:'Équipements & Appareils',desc:'Échographe portable Dawei avec 1 sonde — léger et précis'},
-{id:145,nom:'Échographe portatif Dawei 2 sondes',prix:1100000,cat:'Équipements & Appareils',desc:'Échographe portable Dawei avec 2 sondes'},
-{id:146,nom:'Nébuliseur portable',prix:10000,cat:'Équipements & Appareils',desc:'Nébuliseur compact pour aérosolthérapie à domicile'},
-{id:147,nom:'Nébuliseur grand modèle',prix:30000,cat:'Équipements & Appareils',desc:'Nébuliseur de grande capacité pour cabinet et clinique'},
-{id:148,nom:'Tambour de stérilisation petit',prix:17500,cat:'Équipements & Appareils',desc:'Tambour inox petit modèle pour compresses et instruments'},
-{id:149,nom:'Tambour de stérilisation moyen',prix:22500,cat:'Équipements & Appareils',desc:'Tambour inox modèle moyen'},
-{id:150,nom:'Tambour de stérilisation grand',prix:30000,cat:'Équipements & Appareils',desc:'Tambour inox grand modèle'},
-{id:151,nom:'Micropipette',prix:12500,cat:'Équipements & Appareils',desc:'Micropipette de laboratoire volume réglable'},
-{id:152,nom:'Thermomètre électronique',prix:1500,cat:'Diagnostic & Instruments',desc:'Thermomètre digital, résultat rapide'},
-{id:153,nom:'Ballon de réanimation bébé complet',prix:22500,cat:'Diagnostic & Instruments',desc:'Ambu pédiatrique complet avec masque'},
-{id:154,nom:'Poire pingouin',prix:4000,cat:'Diagnostic & Instruments',desc:'Poire d\'aspiration nasale pour nourrisson'},
-{id:155,nom:'Haricot inox',prix:6000,cat:'Diagnostic & Instruments',desc:'Plateau réniforme en inox'},
-{id:156,nom:'Coton hydrophile 500g',prix:2500,cat:'Consommables',desc:'Rouleau de coton qualité médicale 500g'},
-{id:157,nom:'Table d\'accouchement (Locale)',prix:90000,cat:'Mobilier médical',desc:'Table d\'accouchement fabrication locale robuste'},
-{id:158,nom:'Table accouchement et gynécologique 2 en 1',prix:125000,cat:'Mobilier médical',desc:'Table mixte accouchement + examen gynécologique'},
-{id:159,nom:'Toise adulte',prix:17500,cat:'Mobilier médical',desc:'Toise de mesure de la taille adulte'},
-{id:160,nom:'Balance adulte 160 kg',prix:20000,cat:'Mobilier médical',desc:'Pèse-personne mécanique grande capacité 160 kg'},
-{id:161,nom:'Balance adulte 130 kg',prix:12500,cat:'Mobilier médical',desc:'Pèse-personne capacité 130 kg'},
-{id:162,nom:'Balance bébé numérique',prix:17500,cat:'Mobilier médical',desc:'Pèse-bébé numérique précis'},
-{id:163,nom:'Balance bébé électronique',prix:25000,cat:'Mobilier médical',desc:'Pèse-bébé électronique avec plateau'},
-{id:164,nom:'Balance mère-enfant électronique',prix:30000,cat:'Mobilier médical',desc:'Balance électronique double pesée mère-enfant'},
-{id:165,nom:'Urinoir homme',prix:7500,cat:'Autres matériels',desc:'Urinal homme pour patient alité'},
-{id:166,nom:'Urinoir femme',prix:7500,cat:'Autres matériels',desc:'Urinal femme pour patiente alitée'},
-{id:167,nom:'Stéthoscope obstétrical de Pinard',prix:3000,cat:'Diagnostic & Instruments',desc:'Stéthoscope de Pinard pour consultations prénatales'},
-{id:168,nom:'Ruban MUAC périmètre brachial',prix:500,cat:'Diagnostic & Instruments',desc:'Bracelet de mesure du périmètre brachial — dépistage malnutrition'},
-{id:169,nom:'Mètre ruban de mesure',prix:1000,cat:'Diagnostic & Instruments',desc:'Mètre ruban souple pour mesures corporelles'},
-{id:170,nom:'Marteau à réflexes',prix:7500,cat:'Diagnostic & Instruments',desc:'Marteau à réflexes pour examen neurologique'},
-{id:171,nom:'Ventouse obstétricale',prix:65000,cat:'Diagnostic & Instruments',desc:'Ventouse obstétricale pour assistance à l\'accouchement'},
-{id:172,nom:'Lampe d\'examen sur pied',prix:85000,cat:'Équipements & Appareils',desc:'Lampe d\'examen médicale orientable sur pied roulant'},
-{id:173,nom:'Aspirateur de mucosités manuel à pédale',prix:45000,cat:'Équipements & Appareils',desc:'Aspirateur manuel à pédale — fonctionne sans électricité'},
-{id:174,nom:'Aspirateur de mucosités électrique',prix:55000,cat:'Équipements & Appareils',desc:'Aspirateur électrique de mucosités pour bloc et urgences'},
-{id:175,nom:'Glacière porte-vaccins',prix:22500,cat:'Équipements & Appareils',desc:'Glacière isotherme pour transport et conservation des vaccins'},
-{id:176,nom:'Potence à perfusion industrielle (pied à sérum)',prix:15000,cat:'Mobilier médical',desc:'Pied à sérum industriel réglable sur roulettes'},
-{id:177,nom:'Toise bébé (table de mesure)',prix:17500,cat:'Mobilier médical',desc:'Toise de mesure de la taille du nourrisson'},
-{id:178,nom:'Paravent médical',prix:55000,cat:'Mobilier médical',desc:'Paravent de séparation pour salle de consultation'},
-{id:179,nom:'Marchepied 2 marches',prix:12500,cat:'Mobilier médical',desc:'Marchepied médical 2 marches pour accès table d\'examen'},
-{id:180,nom:'Brancard',prix:50000,cat:'Mobilier médical',desc:'Brancard de transport patient'},
-{id:181,nom:'Drap d\'examen en rouleau de 100',prix:9000,cat:'Consommables',desc:'Rouleau de 100 draps d\'examen jetables'},
-{id:182,nom:'Bassin de lit',prix:9000,cat:'Autres matériels',desc:'Bassin de lit pour patient alité'},
-{id:183,nom:'Béquilles (la paire)',prix:17500,cat:'Autres matériels',desc:'Paire de béquilles réglables'},
-{id:184,nom:'Canne de marche',prix:5000,cat:'Autres matériels',desc:'Canne de marche réglable'},
-{id:185,nom:'Déambulateur',prix:17500,cat:'Autres matériels',desc:'Déambulateur pliable pour aide à la marche'}
-];
+// Le catalogue (produits, prix, photos) est dans le fichier produits.js, modifiable depuis la page admin.html
+const PRODUITS = Array.isArray(window.CATALOGUE) ? window.CATALOGUE.filter(p=>p && Number.isInteger(p.id) && p.nom && p.cat).map(p=>({...p, prix:Math.max(0,parseInt(p.prix)||0)})) : [];
 const CATS = ['Tous', ...[...new Set(PRODUITS.map(p=>p.cat))]];
 
 // ═══ PHOTOS DES PRODUITS ═══
-// Pour afficher une vraie photo : ajoutez le fichier dans le dossier "images" puis une ligne ici.
-//   identifiant du produit (ou du kit) : 'chemin de la photo'
-// Exemple :  12:'images/doppler-petit.jpg',  'kit-etu-essentiel':'images/kit-etudiant.jpg',
-// Sans photo, le produit affiche automatiquement une illustration.
+// Les photos des produits se règlent dans la page admin.html (champ « photo » de produits.js).
+// Ici, uniquement les photos des kits. Exemple :  'kit-etu-essentiel':'images/kit-etudiant.jpg',
+// Sans photo, l'article affiche automatiquement une illustration.
 const PHOTOS = {
-  // Photos libres de droits (Wikimedia Commons) — auteurs et licences dans credits.html
-  39:'images/stethoscope.jpg',
-  27:'images/tensiometre-manuel.jpg',
-  40:'images/tensiometre-manuel.jpg',
-  41:'images/tensiometre-manuel.jpg',
-  44:'images/tensiometre-manuel.jpg',
-  43:'images/tensiometre-electronique.jpg',
-  45:'images/tensiometre-electronique.jpg',
-  186:'images/tensiometre-electronique.jpg',
-  42:'images/tensiometre-poignet.jpg',
-  47:'images/thermometre-digital.jpg',
-  48:'images/thermometre-digital.jpg',
-  152:'images/thermometre-digital.jpg',
-  46:'images/thermometre-mercure.jpg',
-  36:'images/saturometre.jpg',
-  34:'images/otoscope.jpg',
-  53:'images/bandelettes-glycemie.jpg',
-  54:'images/bandelettes-glycemie.jpg',
-  55:'images/bandelettes-glycemie.jpg',
-  6:'images/centrifugeuse.jpg',
-  7:'images/centrifugeuse.jpg',
-  108:'images/seringue.jpg',
-  109:'images/seringue.jpg',
-  110:'images/seringue-insuline.jpg',
-  98:'images/gants-steriles.jpg',
-  130:'images/fauteuil-roulant.jpg',
-  183:'images/bequilles.jpg',
-  185:'images/deambulateur.jpg',
-  11:'images/doppler-foetal.jpg',
-  12:'images/doppler-foetal.jpg',
-  1:'images/echographe.jpg',
-  151:'images/micropipette.jpg',
-  94:'images/embouts-pipette.jpg',
-  95:'images/embouts-pipette.jpg',
-  167:'images/stethoscope-pinard.jpg',
-  29:'images/ballon-reanimation.jpg',
-  153:'images/ballon-reanimation.jpg',
-  32:'images/laryngoscope.jpg',
-  170:'images/marteau-reflexes.jpg',
-  100:'images/lames-bistouri.jpg',
-  97:'images/fil-suture.jpg',
-  118:'images/fil-suture.jpg',
-  119:'images/fil-suture.jpg',
-  120:'images/fil-suture.jpg',
-  121:'images/fil-suture.jpg',
-  90:'images/abaisse-langue.jpg',
-  112:'images/sparadrap.jpg',
-  155:'images/haricot.jpg',
-  169:'images/metre-ruban.jpg',
-  140:'images/bonnet-chirurgical.jpg',
-  33:'images/lunettes-protection.jpg',
-  127:'images/boite-securite.jpg',
-  13:'images/concentrateur-oxygene.jpg',
-  132:'images/lit-medicalise.jpg',
-  180:'images/brancard.jpg',
 };
 
 // Illustration choisie d'après le nom du produit (première règle qui correspond)
@@ -1074,7 +825,7 @@ function teinteDe(a){
 function svgIc(nom){ return '<svg class="ic" aria-hidden="true"><use href="#i-'+nom+'"/></svg>'; }
 // Illustration, recouverte par la photo si elle existe (si la photo ne charge pas, l'illustration reste visible)
 function visuel(a){
-  const ph = PHOTOS[a.id];
+  const ph = a.photo || PHOTOS[a.id];
   return svgIc(iconeDe(a)) + (ph ? '<img src="'+esc(ph)+'" alt="'+esc(a.nom)+'" loading="lazy" onerror="this.remove()">' : '');
 }
 const PROD_PAR_ID = new Map(PRODUITS.map(p=>[p.id,p]));
@@ -1223,8 +974,8 @@ function prodHtml(p){
   return '<div class="prod '+(cart[p.id]?'in-cart':'')+'">'+
     '<div class="prod-img" style="'+teinteDe(p)+'">'+visuel(p)+'</div>'+
     '<div class="prod-body">'+
-      '<div class="prod-nom">'+p.nom+'</div>'+
-      (p.desc?'<div class="prod-desc">'+p.desc+'</div>':'')+
+      '<div class="prod-nom">'+esc(p.nom)+'</div>'+
+      (p.desc?'<div class="prod-desc">'+esc(p.desc)+'</div>':'')+
       '<div class="prod-prix">'+fmt(p.prix)+' <span>CFA</span></div>'+
       ctrlHtml(p)+
       '<button class="prod-share" onclick="shareProd('+p.id+')">↗ Partager</button>'+
@@ -1240,7 +991,7 @@ function kitHtml(k){
       '<div class="prod-nom">'+k.nom+'</div>'+
       '<div class="prod-desc">'+k.desc+'</div>'+
       '<ul class="kit-list">'+k.items.map(([id,q])=>{ const p=PROD_PAR_ID.get(id);
-        return '<li><span>'+(q>1?'<b>'+q+' × </b>':'')+p.nom+'</span><span>'+fmt(p.prix*q)+'</span></li>'; }).join('')+'</ul>'+
+        return '<li><span>'+(q>1?'<b>'+q+' × </b>':'')+esc(p.nom)+'</span><span>'+fmt(p.prix*q)+'</span></li>'; }).join('')+'</ul>'+
       '<div class="kit-prix"><s>'+fmt(k.prixNormal)+' CFA</s><div class="prod-prix">'+fmt(k.prix)+' <span>CFA</span></div>'+
         '<span class="kit-eco">Vous économisez '+fmt(k.prixNormal-k.prix)+' CFA</span></div>'+
       ctrlHtml(k)+
@@ -1339,7 +1090,7 @@ function renderCartItems(){
     const p = article(id); const q=cart[id]; const sub=p.prix*q; total+=sub; const k=cleJs(p);
     return '<div class="cart-item">'+
       '<div class="ci-ico" style="'+teinteDe(p)+'">'+visuel(p)+'</div>'+
-      '<div class="ci-info"><div class="ci-nom">'+p.nom+'</div><div class="ci-prix">'+fmt(p.prix)+' CFA / '+(p.kit?'kit · '+p.items.length+' articles':'unité')+'</div></div>'+
+      '<div class="ci-info"><div class="ci-nom">'+esc(p.nom)+'</div><div class="ci-prix">'+fmt(p.prix)+' CFA / '+(p.kit?'kit · '+p.items.length+' articles':'unité')+'</div></div>'+
       '<div class="ci-qty"><button onclick="chgQty('+k+',-1)" aria-label="Retirer un">−</button><span class="v">'+q+'</span><button onclick="chgQty('+k+',1)" aria-label="Ajouter un">+</button></div>'+
       '<div class="ci-sub">'+fmt(sub)+'</div>'+
       '<button class="ci-del" onclick="supprimerArticle('+k+')" aria-label="Supprimer '+esc(p.nom)+'">×</button>'+
