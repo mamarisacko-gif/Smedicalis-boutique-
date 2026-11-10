@@ -21,7 +21,7 @@ window.CATALOGUE = [
 {"id":19,"nom":"Hemocue Bio aiD appareil","prix":25000,"cat":"Équipements & Appareils","desc":"Analyseur d'hémoglobine Bio aiD","photo":"images/produit-19-1794296152989.jpg"},
 {"id":20,"nom":"Hemocue Bio aiD bandelette B/50","prix":9000,"cat":"Équipements & Appareils","desc":"Bandelettes Bio aiD, boîte de 50","photo":"images/produit-20-1794296221037.jpg"},
 {"id":21,"nom":"Incubateur 80L","prix":750000,"cat":"Équipements & Appareils","desc":"Incubateur de laboratoire 80 litres"},
-{"id":22,"nom":"Lame (Microscope)","prix":1250,"cat":"Équipements & Appareils","desc":"Lames porte-objet pour microscope"},
+{"id":22,"nom":"Lame (Microscope)","prix":1250,"cat":"Équipements & Appareils","desc":"Lames porte-objet pour microscope","photo":"images/produit-22-1794296427247.jpg"},
 {"id":23,"nom":"Microscope binoculaire OLYMPUS","prix":135000,"cat":"Équipements & Appareils","desc":"Microscope binoculaire de marque Olympus"},
 {"id":24,"nom":"Négatoscope","prix":105000,"cat":"Équipements & Appareils","desc":"Négatoscope pour lecture de radiographies"},
 {"id":25,"nom":"Stérilisateur 22L (AUTOCLAVE)","prix":160000,"cat":"Équipements & Appareils","desc":"Autoclave stérilisateur 22 litres"},
