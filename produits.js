@@ -13,7 +13,7 @@ window.CATALOGUE = [
 {"id":11,"nom":"Doppler foetal grand","prix":30000,"cat":"Équipements & Appareils","desc":"Doppler fœtal grand modèle","photo":"images/produit-11-1794295768363.jpg"},
 {"id":12,"nom":"Doppler foetal PETIT avec gel écho","prix":10000,"cat":"Équipements & Appareils","desc":"Doppler fœtal compact + gel inclus","photo":"images/produit-12-1794295789934.jpg"},
 {"id":13,"nom":"Extracteur D'Oxygene 10L","prix":530000,"cat":"Équipements & Appareils","desc":"Concentrateur d'oxygène 10 litres/min","photo":"images/concentrateur-oxygene.jpg"},
-{"id":14,"nom":"Film ECG","prix":4500,"cat":"Équipements & Appareils","desc":"Rouleau de film thermique pour ECG"},
+{"id":14,"nom":"Film ECG","prix":4500,"cat":"Équipements & Appareils","desc":"Rouleau de film thermique pour ECG","photo":"images/produit-14-1794295915981.jpg"},
 {"id":15,"nom":"Film écho Sony type 1 Rouleaux","prix":3500,"cat":"Équipements & Appareils","desc":"Film Sony pour imprimante échographe type 1"},
 {"id":16,"nom":"Film echo type 5 Rouleaux","prix":6000,"cat":"Équipements & Appareils","desc":"Film pour imprimante échographe type 5"},
 {"id":17,"nom":"Gel écho 5L","prix":10000,"cat":"Équipements & Appareils","desc":"Gel de transmission échographique 5 litres"},
