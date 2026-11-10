@@ -4,7 +4,7 @@ window.CATALOGUE = [
 {"id":2,"nom":"Appareil Hémocue 301","prix":300000,"cat":"Équipements & Appareils","desc":"Analyseur d'hémoglobine portable","photo":"images/produit-2-1794295080750.jpg"},
 {"id":3,"nom":"Bac de coloration","prix":30000,"cat":"Équipements & Appareils","desc":"Pour colorations en laboratoire","photo":"images/produit-3-1794295618576.jpg"},
 {"id":4,"nom":"Bandelette hemocue 301 B/50","prix":20000,"cat":"Équipements & Appareils","desc":"Bandelettes Hemocue 301, boîte de 50\n1 boîte à 20.000f et 4 boîte à 70.000f","photo":"images/produit-4-1794295242500.jpg"},
-{"id":5,"nom":"Bistouri électrique","prix":900000,"cat":"Équipements & Appareils","desc":"Bistouri électrique chirurgical"},
+{"id":5,"nom":"Bistouri électrique","prix":900000,"cat":"Équipements & Appareils","desc":"Bistouri électrique chirurgical","photo":"images/produit-5-1794295631019.jpg"},
 {"id":6,"nom":"Centrifugeuse 12 trous","prix":115000,"cat":"Équipements & Appareils","desc":"Centrifugeuse de laboratoire 12 places","photo":"images/centrifugeuse.jpg"},
 {"id":7,"nom":"Centrifugeuse 6 trous","prix":50000,"cat":"Équipements & Appareils","desc":"Centrifugeuse de laboratoire 6 places","photo":"images/produit-7-1794295412149.jpg"},
 {"id":8,"nom":"Coagulometre","prix":800000,"cat":"Équipements & Appareils","desc":"Analyseur de coagulation"},
