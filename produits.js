@@ -1,5 +1,5 @@
 window.CATALOGUE = [
-{"id":0,"nom":"Appareil ECG","prix":225000,"cat":"Équipements & Appareils","desc":"Électrocardiographe professionnel"},
+{"id":0,"nom":"Appareil ECG","prix":225000,"cat":"Équipements & Appareils","desc":"Électrocardiographe professionnel","photo":"images/produit-0-1794295605018.jpg"},
 {"id":1,"nom":"Appareil écho EDAN","prix":2050000,"cat":"Équipements & Appareils","desc":"Échographe de marque EDAN","photo":"images/echographe.jpg"},
 {"id":2,"nom":"Appareil Hémocue 301","prix":300000,"cat":"Équipements & Appareils","desc":"Analyseur d'hémoglobine portable","photo":"images/produit-2-1794295080750.jpg"},
 {"id":3,"nom":"Bac de coloration","prix":30000,"cat":"Équipements & Appareils","desc":"Pour colorations en laboratoire"},
