@@ -32,4 +32,6 @@ Standalone page for the shop owner: search, add, edit, delete products and uploa
 
 ## Repository
 
+`.claude/commands/*.md` defines the owner's custom slash commands (`/ghost`, `/humanize`, `/10x`, `/devil`, `/eli5`, `/compare`, `/pitch`, `/negotiate`, `/l99`, `/buildme`): French prompt templates taking `$ARGUMENTS`.
+
 `.claude/settings.json` enables Claude Code plugins (supabase, vercel, oh-my-claudecode, chrome-devtools-mcp) from their marketplaces.
