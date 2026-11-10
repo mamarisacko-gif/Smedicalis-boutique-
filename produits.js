@@ -2,7 +2,7 @@ window.CATALOGUE = [
 {"id":0,"nom":"Appareil ECG","prix":225000,"cat":"Équipements & Appareils","desc":"Électrocardiographe professionnel","photo":"images/produit-0-1794295605018.jpg"},
 {"id":1,"nom":"Appareil écho EDAN","prix":2050000,"cat":"Équipements & Appareils","desc":"Échographe de marque EDAN","photo":"images/echographe.jpg"},
 {"id":2,"nom":"Appareil Hémocue 301","prix":300000,"cat":"Équipements & Appareils","desc":"Analyseur d'hémoglobine portable","photo":"images/produit-2-1794295080750.jpg"},
-{"id":3,"nom":"Bac de coloration","prix":30000,"cat":"Équipements & Appareils","desc":"Pour colorations en laboratoire"},
+{"id":3,"nom":"Bac de coloration","prix":30000,"cat":"Équipements & Appareils","desc":"Pour colorations en laboratoire","photo":"images/produit-3-1794295618576.jpg"},
 {"id":4,"nom":"Bandelette hemocue 301 B/50","prix":20000,"cat":"Équipements & Appareils","desc":"Bandelettes Hemocue 301, boîte de 50\n1 boîte à 20.000f et 4 boîte à 70.000f","photo":"images/produit-4-1794295242500.jpg"},
 {"id":5,"nom":"Bistouri électrique","prix":900000,"cat":"Équipements & Appareils","desc":"Bistouri électrique chirurgical"},
 {"id":6,"nom":"Centrifugeuse 12 trous","prix":115000,"cat":"Équipements & Appareils","desc":"Centrifugeuse de laboratoire 12 places","photo":"images/centrifugeuse.jpg"},
