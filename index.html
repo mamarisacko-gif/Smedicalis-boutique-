@@ -210,6 +210,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .kit-prix .prod-prix{margin:0;font-size:20px;color:var(--red);}
 .kit-eco{font-size:11px;font-weight:700;color:var(--green);background:#EAF7EE;padding:3px 8px;border-radius:7px;}
 
+/* Page d'arrivée d'un lien direct vers un kit */
+.kit-cmd{padding:15px;border:none;border-radius:12px;background:#25D366;color:#fff;font-family:inherit;font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 6px 18px rgba(37,211,102,.35);margin-bottom:8px;}
+.kit-cmd:active{transform:scale(.98);}
+.kit-acts{display:flex;gap:7px;}
+.kit-acts .prod-share{flex:1;}
+.kit-retour{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 16px;}
+.kit-retour p{margin:0;font-weight:600;color:var(--blue-dark);}
+body.arrivee-kit .promos{display:none;}
+body.arrivee-kit .prod.kit{grid-column:1/-1;max-width:640px;width:100%;margin:0 auto;border:2px solid var(--orange);}
 /* ═══ ADAPTATIF : téléphone → tablette → ordinateur ═══ */
 :root{--gut:14px;}
 .cats{padding-left:var(--gut);padding-right:var(--gut);}
@@ -859,6 +868,10 @@ const KITS = [
   {id:'kit-sf-accouchement', public:'sagefemme', ico:'baby', nom:'Kit Sage-femme — Salle d\'accouchement',
    desc:'Équipement de base d\'une salle d\'accouchement et accueil du nouveau-né.',
    items:[[157,1],[126,1],[153,1],[154,1],[162,1],[92,1],[172,1],[173,1]]},
+  {id:'kit-sf-cabinet', public:'sagefemme', ico:'clinic', nom:'Kit Ouverture de cabinet de sage-femme',
+   desc:'Le cabinet complet : salle de consultation prénatale et salle d\'accouchement, prêt à ouvrir.',
+   items:[[136,1],[178,1],[179,1],[12,1],[167,1],[43,1],[152,1],[133,1],[169,1],[38,2],[56,1],
+          [157,1],[126,1],[153,1],[154,1],[162,1],[92,1],[172,1],[173,1],[181,1],[134,1],[127,5]]},
   // ─── Infirmier ───
   {id:'kit-inf-domicile', public:'infirmier', ico:'kit', nom:'Kit Infirmier — Soins à domicile',
    desc:'La sacoche de l\'infirmier libéral : constantes, glycémie et pansements.',
@@ -912,6 +925,7 @@ let activeCat = 'Tous';
 let searchTerm = '';
 let sortMode = 'cat';
 let proFiltre = 'tous';
+let kitCible = null; // kit ouvert par un lien direct (?kit=…) : affiché seul, prêt à commander
 
 function fmt(n){ return (n||0).toLocaleString('fr-FR'); }
 
@@ -922,9 +936,10 @@ function renderCats(){
     chip(V_ETU, '🎓', 'kit-chip') + chip(V_PRO, '👩‍⚕️', 'kit-chip pro') +
     CATS.slice(1).map(c=>chip(c, CAT_CHIP_ICONS[c]||'📦')).join('');
 }
-function setCat(c){ activeCat=c; renderCats(); renderGrid(); window.scrollTo({top:0,behavior:'smooth'}); }
+function setCat(c){ kitCible=null; document.body.classList.remove('arrivee-kit'); activeCat=c; renderCats(); renderGrid(); window.scrollTo({top:0,behavior:'smooth'}); }
 // Ouvre directement une vue kits (depuis les bannières ou un lien partagé)
 function voirKits(vue, pub){
+  kitCible = null; document.body.classList.remove('arrivee-kit');
   activeCat = vue==='etu' ? V_ETU : V_PRO;
   proFiltre = pub && PUBLICS[pub] && pub!=='etudiant' ? pub : 'tous';
   renderCats(); renderGrid();
@@ -994,12 +1009,29 @@ function kitHtml(k){
         return '<li><span>'+(q>1?'<b>'+q+' × </b>':'')+esc(p.nom)+'</span><span>'+fmt(p.prix*q)+'</span></li>'; }).join('')+'</ul>'+
       '<div class="kit-prix"><s>'+fmt(k.prixNormal)+' CFA</s><div class="prod-prix">'+fmt(k.prix)+' <span>CFA</span></div>'+
         '<span class="kit-eco">Vous économisez '+fmt(k.prixNormal-k.prix)+' CFA</span></div>'+
-      ctrlHtml(k)+
-      '<button class="prod-share" onclick="shareKit(\''+k.id+'\')">↗ Partager</button>'+
+      (kitCible===k
+        ? '<button class="kit-cmd" onclick="commanderKit(\''+k.id+'\')">🛒 Commander ce kit</button>'+(cart[k.id]?ctrlHtml(k):'')
+        : ctrlHtml(k))+
+      '<div class="kit-acts"><button class="prod-share" onclick="shareKit(\''+k.id+'\')">↗ Partager</button>'+
+      '<button class="prod-share" onclick="copierLienKit(\''+k.id+'\')">🔗 Copier le lien</button></div>'+
     '</div>'+
   '</div>';
 }
+function lienKit(id){ return 'https://smedicalis.com/?kit='+id; }
+function copierLienKit(id){
+  const lien = lienKit(id);
+  const ok = ()=>showToast('Lien copié ✓');
+  const secours = ()=>{ window.prompt('Copiez ce lien :', lien); };
+  if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(lien).then(ok, secours); else secours();
+}
+// Bouton de la page d'arrivée : met le kit au panier (une fois) et ouvre la commande
+function commanderKit(id){
+  if(!cart[id]){ cart[id]=1; sauverPanier(); renderGrid(); updateCartBar(); }
+  openCart();
+}
 function introKitsHtml(){
+  if(kitCible) return '<div class="kit-intro kit-retour"><p>Offre réservée aux achats sur le site · Livraison Bamako et régions · Paiement à la livraison</p>'+
+    '<button class="pro-chip" onclick="voirKits(\''+(kitCible.public==='etudiant'?'etu':'pro')+'\')">Voir tous les kits →</button></div>';
   if(activeCat===V_ETU) return '<div class="kit-intro"><h2>🎓 Kits étudiants — '+pct(REMISE_ETUDIANT)+' à l\'achat sur le site</h2>'+
     '<p>Des kits prêts pour vos stages en médecine, soins infirmiers ou maïeutique. La réduction est déjà appliquée : ajoutez le kit au panier et envoyez la commande sur WhatsApp.</p></div>';
   const prof = proFiltre==='tous' ? 'professionnel de santé' : PUBLICS[proFiltre].toLowerCase();
@@ -1016,7 +1048,8 @@ function renderGrid(){
   const mots = searchTerm ? searchTerm.split(' ').filter(Boolean) : [];
   const okQ = k=>mots.every(m=>k._q.includes(m));
   let kits = [];
-  if(activeCat===V_ETU) kits = KITS.filter(k=>k.public==='etudiant' && okQ(k));
+  if(kitCible && !mots.length) kits = [kitCible];
+  else if(activeCat===V_ETU) kits = KITS.filter(k=>k.public==='etudiant' && okQ(k));
   else if(activeCat===V_PRO) kits = KITS.filter(k=>k.public!=='etudiant' && (proFiltre==='tous'||k.public===proFiltre) && okQ(k));
   else if(activeCat==='Tous' && mots.length) kits = KITS.filter(okQ); // la recherche générale trouve aussi les kits
   const list = vueKit ? [] : filtered();
@@ -1028,7 +1061,8 @@ function renderGrid(){
   const g = document.getElementById('grid');
   let html = vueKit ? introKitsHtml() : '';
   if(!list.length && !kits.length) html += emptyHtml();
-  g.innerHTML = html + kits.map(kitHtml).join('') + list.map(prodHtml).join('');
+  if(kitCible && kits[0]===kitCible) g.innerHTML = kitHtml(kitCible) + html; // lien direct : le kit d'abord
+  else g.innerHTML = html + kits.map(kitHtml).join('') + list.map(prodHtml).join('');
 }
 
 function chgQty(id, delta){
@@ -1168,7 +1202,9 @@ let lienDirect = false;
   if(kit){ // lien partagé "?kit=kit-etu-essentiel" → ouvre la vue des kits concernée
     lienDirect = true;
     activeCat = kit.public==='etudiant' ? V_ETU : V_PRO;
-    window.addEventListener('load', ()=>{ const el=document.getElementById(kit.id); if(el) el.scrollIntoView({block:'center'}); });
+    kitCible = kit;
+    document.body.classList.add('arrivee-kit');
+    window.addEventListener('load', ()=>{ const el=document.getElementById('cats'); if(el) el.scrollIntoView({block:'start'}); });
     return;
   }
   const p = prm.has('p') ? PROD_PAR_ID.get(Number(prm.get('p'))) : null;
