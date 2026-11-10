@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Gestion du catalogue — Smedicalis</title>
+<link rel="icon" type="image/png" href="logo.png">
+<style>
+:root{--blue:#1B4D89;--blue-dark:#123A6B;--orange:#F5871F;--ink:#13233B;--muted:#6B7C93;--bg:#F2F6FB;--border:#DCE6F2;--green:#16A34A;--red:#D92D20;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;}
+button,input,select,textarea{font:inherit;color:inherit;}
+header{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+header h1{font-size:18px;}
+header a{color:#fff;font-size:13px;font-weight:600;}
+main{max-width:1000px;margin:0 auto;padding:16px;}
+.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:16px;}
+h2{font-size:17px;margin-bottom:8px;color:var(--blue);}
+p{font-size:14px;color:var(--muted);margin-bottom:10px;}
+ol{font-size:14px;color:var(--ink);padding-left:20px;margin:8px 0 12px;}
+ol li{margin-bottom:5px;}
+label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin:12px 0 5px;}
+input[type=text],input[type=password],input[type=number],input[type=search],select,textarea{width:100%;padding:11px 12px;border:1.5px solid var(--border);border-radius:10px;background:#fff;font-size:15px;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);}
+textarea{min-height:70px;resize:vertical;}
+.btn{border:none;border-radius:10px;padding:11px 16px;font-weight:700;font-size:14px;cursor:pointer;background:var(--blue);color:#fff;}
+.btn:disabled{opacity:.5;cursor:default;}
+.btn.orange{background:var(--orange);}
+.btn.ghost{background:#fff;color:var(--blue);border:1.5px solid var(--border);}
+.btn.danger{background:#fff;color:var(--red);border:1.5px solid #F3C5C0;}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.row > *{flex:1;min-width:150px;}
+.row > .btn{flex:0 0 auto;min-width:0;}
+#statut{position:sticky;top:0;z-index:5;padding:10px 14px;border-radius:10px;font-size:14px;font-weight:600;margin-bottom:12px;display:none;}
+#statut.ok{display:block;background:#EAF7EE;color:#11682F;border:1px solid #BFE5CB;}
+#statut.err{display:block;background:#FDECEA;color:#A8261B;border:1px solid #F3C5C0;}
+#statut.info{display:block;background:#EAF1FA;color:var(--blue-dark);border:1px solid var(--border);}
+.item{display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid var(--border);}
+.item:last-child{border-bottom:none;}
+.vig{width:58px;height:58px;border-radius:10px;border:1px solid var(--border);background:var(--bg);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);text-align:center;overflow:hidden;}
+.vig img{width:100%;height:100%;object-fit:contain;background:#fff;}
+.inf{flex:1;min-width:0;}
+.inf b{display:block;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.inf span{font-size:12.5px;color:var(--muted);}
+.inf .px{color:var(--blue);font-weight:700;}
+.item .btn{padding:8px 12px;font-size:13px;}
+dialog{border:none;border-radius:16px;padding:0;width:min(560px,94vw);max-height:92vh;}
+dialog::backdrop{background:rgba(19,35,59,.6);}
+dialog form{padding:20px;}
+.apercu{display:flex;gap:12px;align-items:center;margin-top:6px;}
+.apercu .vig{width:96px;height:96px;}
+.pied{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:20px;}
+details{font-size:14px;margin-top:8px;}
+summary{cursor:pointer;font-weight:700;color:var(--blue);}
+code{background:var(--bg);padding:1px 5px;border-radius:5px;font-size:13px;}
+[hidden]{display:none!important;}
+</style>
+</head>
+<body>
+<header>
+  <h1>🛠️ Gestion du catalogue Smedicalis</h1>
+  <a href="./">← Voir la boutique</a>
+</header>
+<main>
+  <div id="statut" role="status" aria-live="polite"></div>
+
+  <!-- CONNEXION -->
+  <section class="card" id="cnx">
+    <h2>Connexion</h2>
+    <p>Pour modifier le catalogue, collez votre clé d'accès GitHub. Elle reste enregistrée uniquement dans ce navigateur, sur cet appareil.</p>
+    <label for="cle">Clé d'accès GitHub</label>
+    <div class="row">
+      <input type="password" id="cle" placeholder="github_pat_…" autocomplete="off">
+      <button class="btn" id="btn-cnx">Se connecter</button>
+    </div>
+    <details>
+      <summary>Comment obtenir ma clé ? (à faire une seule fois)</summary>
+      <ol>
+        <li>Connectez-vous à GitHub, puis ouvrez <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">cette page de création de clé</a>.</li>
+        <li><b>Token name</b> : écrivez <code>Gestion Smedicalis</code>. <b>Expiration</b> : choisissez la durée la plus longue.</li>
+        <li><b>Repository access</b> : choisissez <i>Only select repositories</i>, puis sélectionnez <code>Smedicalis-boutique-</code>.</li>
+        <li><b>Permissions → Repository permissions → Contents</b> : choisissez <i>Read and write</i>.</li>
+        <li>Cliquez sur <b>Generate token</b>, copiez la clé qui commence par <code>github_pat_</code> et collez-la ci-dessus.</li>
+      </ol>
+      <p>Ne partagez jamais cette clé : elle permet de modifier votre site.</p>
+    </details>
+  </section>
+
+  <!-- CATALOGUE -->
+  <section id="app" hidden>
+    <div class="card">
+      <div class="row">
+        <input type="search" id="q" placeholder="Rechercher un produit…" aria-label="Rechercher un produit">
+        <select id="fcat" aria-label="Filtrer par catégorie"></select>
+        <select id="fphoto" aria-label="Filtrer par photo">
+          <option value="">Avec et sans photo</option>
+          <option value="sans">Sans photo</option>
+          <option value="avec">Avec photo</option>
+        </select>
+        <button class="btn orange" id="btn-nouveau">+ Nouveau produit</button>
+      </div>
+      <p id="compte" style="margin:12px 0 0;"></p>
+    </div>
+    <div class="card" id="liste"></div>
+    <p style="text-align:center;"><button class="btn ghost" id="btn-decnx">Se déconnecter de cet appareil</button></p>
+  </section>
+</main>
+
+<!-- FICHE PRODUIT -->
+<dialog id="dlg">
+  <form id="fiche" method="dialog">
+    <h2 id="f-titre">Produit</h2>
+    <label for="f-nom">Nom du produit *</label>
+    <input type="text" id="f-nom" maxlength="120" required>
+    <div class="row">
+      <div>
+        <label for="f-prix">Prix (CFA) *</label>
+        <input type="number" id="f-prix" min="0" step="1" inputmode="numeric" required>
+      </div>
+      <div>
+        <label for="f-cat">Catégorie *</label>
+        <select id="f-cat"></select>
+      </div>
+    </div>
+    <div id="f-newcat-box" hidden>
+      <label for="f-newcat">Nom de la nouvelle catégorie</label>
+      <input type="text" id="f-newcat" maxlength="60">
+    </div>
+    <label for="f-desc">Description</label>
+    <textarea id="f-desc" maxlength="300"></textarea>
+    <label for="f-photo">Photo</label>
+    <div class="apercu">
+      <div class="vig" id="f-vig">Aucune photo</div>
+      <div style="flex:1;min-width:0;">
+        <input type="file" id="f-photo" accept="image/*" style="max-width:100%;">
+        <p style="margin:6px 0 0;font-size:12.5px;">Photo prise au téléphone acceptée : elle est réduite automatiquement.</p>
+        <button type="button" class="btn danger" id="f-sansphoto" style="margin-top:6px;padding:7px 11px;font-size:12.5px;">Retirer la photo</button>
+      </div>
+    </div>
+    <div class="pied">
+      <button type="button" class="btn danger" id="f-suppr">Supprimer le produit</button>
+      <span class="row" style="flex:0 0 auto;">
+        <button type="button" class="btn ghost" id="f-annuler">Annuler</button>
+        <button type="submit" class="btn" id="f-ok">Enregistrer</button>
+      </span>
+    </div>
+  </form>
+</dialog>
+
+<script>
+// ═══ Réglages ═══
+const OWNER = 'mamarisacko-gif', REPO = 'Smedicalis-boutique-', BRANCH = 'main';
+const FICHIER = 'produits.js', PREFIXE = 'window.CATALOGUE = ';
+const CLE_LS = 'smed_admin_cle';
+const NOUVELLE_CAT = '__nouvelle__';
+
+let cle = '';            // clé d'accès GitHub
+let produits = [];       // catalogue en cours
+let sha = '';            // version du fichier produits.js sur GitHub
+let enCours = null;      // produit ouvert dans la fiche (null = nouveau)
+let photoChoisie = null; // {b64, url} photo sélectionnée, pas encore envoyée
+let photoRetiree = false;
+const apercus = new Map(); // chemin → aperçu local (la photo met 1-2 min à arriver sur le site)
+
+const $ = id => document.getElementById(id);
+const esc = t => String(t == null ? '' : t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => (n || 0).toLocaleString('fr-FR');
+const norm = t => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+function statut(type, msg){ const s = $('statut'); s.className = type || ''; s.textContent = msg || ''; }
+
+// ═══ GitHub ═══
+async function gh(chemin, options){
+  const o = options || {};
+  const r = await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + chemin, {
+    method: o.method || 'GET',
+    headers: Object.assign({'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + cle},
+                           o.body ? {'Content-Type': 'application/json'} : {}),
+    body: o.body ? JSON.stringify(o.body) : undefined,
+    cache: 'no-store',
+  });
+  if(!r.ok){ const e = new Error('GitHub ' + r.status); e.status = r.status; throw e; }
+  return r.json();
+}
+function messageErreur(e){
+  if(e.status === 401) return 'Clé refusée ou expirée. Créez une nouvelle clé et reconnectez-vous.';
+  if(e.status === 403 || e.status === 404) return 'Cette clé n\'a pas le droit de modifier le site. Vérifiez qu\'elle porte sur « Smedicalis-boutique- » avec la permission Contents en lecture et écriture.';
+  if(e.status === 409 || e.status === 422) return 'Le catalogue a été modifié ailleurs entre-temps. Rechargez la page puis recommencez.';
+  if(e.status) return 'Erreur GitHub (' + e.status + '). Réessayez dans un instant.';
+  return 'Connexion impossible. Vérifiez votre accès à Internet et réessayez.';
+}
+const utf8VersB64 = txt => { const o = new TextEncoder().encode(txt); let s = ''; for(let i = 0; i < o.length; i += 0x8000) s += String.fromCharCode.apply(null, o.subarray(i, i + 0x8000)); return btoa(s); };
+const b64VersUtf8 = b => new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\s/g, '')), c => c.charCodeAt(0)));
+
+async function chargerCatalogue(){
+  const f = await gh(FICHIER + '?ref=' + BRANCH);
+  const txt = b64VersUtf8(f.content);
+  const liste = JSON.parse(txt.slice(txt.indexOf('['), txt.lastIndexOf(']') + 1));
+  if(!Array.isArray(liste)) throw new Error('Catalogue illisible');
+  produits = liste; sha = f.sha;
+}
+async function enregistrerCatalogue(liste, message){
+  const txt = PREFIXE + '[\n' + liste.map(p => JSON.stringify(p)).join(',\n') + '\n];\n';
+  const r = await gh(FICHIER, {method: 'PUT', body: {message, content: utf8VersB64(txt), sha, branch: BRANCH}});
+  sha = r.content.sha; produits = liste;
+}
+
+// ═══ Connexion ═══
+async function connecter(){
+  cle = $('cle').value.trim();
+  if(!cle){ statut('err', 'Collez d\'abord votre clé d\'accès.'); return; }
+  $('btn-cnx').disabled = true; statut('info', 'Connexion…');
+  try{
+    await chargerCatalogue();
+    try{ localStorage.setItem(CLE_LS, cle); }catch(e){}
+    $('cnx').hidden = true; $('app').hidden = false;
+    statut('ok', 'Connecté. ' + produits.length + ' produits chargés.');
+    remplirCats(); afficher();
+  }catch(e){ statut('err', messageErreur(e)); }
+  $('btn-cnx').disabled = false;
+}
+function deconnecter(){
+  try{ localStorage.removeItem(CLE_LS); }catch(e){}
+  cle = ''; $('cle').value = ''; $('app').hidden = true; $('cnx').hidden = false;
+  statut('info', 'Déconnecté de cet appareil.');
+}
+
+// ═══ Liste ═══
+function categories(){ return [...new Set(produits.map(p => p.cat))]; }
+function remplirCats(){
+  const cats = categories(), v = $('fcat').value;
+  $('fcat').innerHTML = '<option value="">Toutes les catégories</option>' + cats.map(c => '<option>' + esc(c) + '</option>').join('');
+  if(cats.includes(v)) $('fcat').value = v;
+}
+function srcPhoto(p){ return p.photo ? (apercus.get(p.photo) || p.photo) : ''; }
+function vignette(p){ const s = srcPhoto(p); return s ? '<img src="' + esc(s) + '" alt="" loading="lazy">' : 'Aucune photo'; }
+function afficher(){
+  const mots = norm($('q').value).split(/\s+/).filter(Boolean), cat = $('fcat').value, ph = $('fphoto').value;
+  const liste = produits.filter(p =>
+    (!cat || p.cat === cat) &&
+    (!ph || (ph === 'avec') === !!p.photo) &&
+    mots.every(m => norm(p.nom + ' ' + (p.desc || '')).includes(m)));
+  const sans = produits.filter(p => !p.photo).length;
+  $('compte').textContent = liste.length + ' produit' + (liste.length > 1 ? 's' : '') + ' affiché' + (liste.length > 1 ? 's' : '') +
+    ' sur ' + produits.length + ' · ' + sans + ' sans photo';
+  $('liste').innerHTML = liste.length ? liste.map(p =>
+    '<div class="item"><div class="vig">' + vignette(p) + '</div>' +
+    '<div class="inf"><b>' + esc(p.nom) + '</b><span><span class="px">' + fmt(p.prix) + ' CFA</span> · ' + esc(p.cat) + '</span></div>' +
+    '<button class="btn ghost" data-id="' + p.id + '">Modifier</button></div>').join('')
+    : '<p style="margin:0;text-align:center;">Aucun produit ne correspond.</p>';
+}
+
+// ═══ Fiche produit ═══
+function ouvrir(p){
+  enCours = p || null; photoChoisie = null; photoRetiree = false;
+  $('f-titre').textContent = p ? 'Modifier le produit' : 'Nouveau produit';
+  $('f-nom').value = p ? p.nom : '';
+  $('f-prix').value = p ? p.prix : '';
+  $('f-desc').value = p ? (p.desc || '') : '';
+  $('f-cat').innerHTML = categories().map(c => '<option>' + esc(c) + '</option>').join('') + '<option value="' + NOUVELLE_CAT + '">+ Nouvelle catégorie…</option>';
+  $('f-cat').value = p ? p.cat : ($('fcat').value || categories()[0] || NOUVELLE_CAT);
+  $('f-newcat').value = ''; $('f-newcat-box').hidden = $('f-cat').value !== NOUVELLE_CAT;
+  $('f-photo').value = '';
+  $('f-vig').innerHTML = p ? vignette(p) : 'Aucune photo';
+  $('f-suppr').hidden = !p;
+  $('f-ok').disabled = false; $('f-suppr').disabled = false;
+  $('dlg').showModal();
+}
+
+// Réduit la photo à 900 px maximum et la convertit en JPEG
+async function reduirePhoto(fichier){
+  const url = URL.createObjectURL(fichier);
+  try{
+    const img = await new Promise((ok, ko) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ko(new Error('Image illisible')); i.src = url; });
+    const k = Math.min(1, 900 / Math.max(img.naturalWidth, img.naturalHeight));
+    const c = document.createElement('canvas');
+    c.width = Math.max(1, Math.round(img.naturalWidth * k)); c.height = Math.max(1, Math.round(img.naturalHeight * k));
+    const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(img, 0, 0, c.width, c.height);
+    const dataUrl = c.toDataURL('image/jpeg', 0.82);
+    return {b64: dataUrl.split(',')[1], url: dataUrl};
+  } finally { URL.revokeObjectURL(url); }
+}
+
+async function validerFiche(ev){
+  ev.preventDefault();
+  const nom = $('f-nom').value.trim(), prix = parseInt($('f-prix').value, 10), desc = $('f-desc').value.trim();
+  const cat = $('f-cat').value === NOUVELLE_CAT ? $('f-newcat').value.trim() : $('f-cat').value;
+  if(!nom){ $('f-nom').focus(); return; }
+  if(!(prix >= 0)){ $('f-prix').focus(); return; }
+  if(!cat){ $('f-newcat').focus(); return; }
+  $('f-ok').disabled = true; $('f-suppr').disabled = true;
+  try{
+    const id = enCours ? enCours.id : produits.reduce((m, p) => Math.max(m, p.id), -1) + 1;
+    let photo = enCours && !photoRetiree ? enCours.photo : undefined;
+    if(photoChoisie){
+      statut('info', 'Envoi de la photo…');
+      const chemin = 'images/produit-' + id + '-' + Date.now() + '.jpg';
+      await gh(chemin, {method: 'PUT', body: {message: 'Photo : ' + nom, content: photoChoisie.b64, branch: BRANCH}});
+      apercus.set(chemin, photoChoisie.url); photo = chemin;
+    }
+    const fiche = {id, nom, prix, cat};
+    if(desc) fiche.desc = desc;
+    if(photo) fiche.photo = photo;
+    statut('info', 'Enregistrement…');
+    const liste = enCours ? produits.map(p => p.id === id ? fiche : p) : produits.concat([fiche]);
+    await enregistrerCatalogue(liste, (enCours ? 'Modifie' : 'Ajoute') + ' le produit : ' + nom);
+    $('dlg').close(); remplirCats(); afficher();
+    statut('ok', '✓ « ' + nom + ' » enregistré. Visible sur le site dans 1 à 2 minutes.');
+  }catch(e){
+    $('dlg').close(); statut('err', messageErreur(e));
+  }
+}
+async function supprimer(){
+  if(!enCours || !confirm('Supprimer définitivement « ' + enCours.nom + ' » du catalogue ?')) return;
+  $('f-ok').disabled = true; $('f-suppr').disabled = true;
+  const nom = enCours.nom, id = enCours.id;
+  try{
+    statut('info', 'Suppression…');
+    await enregistrerCatalogue(produits.filter(p => p.id !== id), 'Supprime le produit : ' + nom);
+    $('dlg').close(); remplirCats(); afficher();
+    statut('ok', '✓ « ' + nom + ' » supprimé. Le site sera à jour dans 1 à 2 minutes.');
+  }catch(e){ $('dlg').close(); statut('err', messageErreur(e)); }
+}
+
+// ═══ Événements ═══
+$('btn-cnx').addEventListener('click', connecter);
+$('cle').addEventListener('keydown', e => { if(e.key === 'Enter') connecter(); });
+$('btn-decnx').addEventListener('click', deconnecter);
+$('q').addEventListener('input', afficher);
+$('fcat').addEventListener('change', afficher);
+$('fphoto').addEventListener('change', afficher);
+$('btn-nouveau').addEventListener('click', () => ouvrir(null));
+$('liste').addEventListener('click', e => { const b = e.target.closest('button[data-id]'); if(b) ouvrir(produits.find(p => p.id === Number(b.dataset.id))); });
+$('f-cat').addEventListener('change', () => { $('f-newcat-box').hidden = $('f-cat').value !== NOUVELLE_CAT; });
+$('f-photo').addEventListener('change', async () => {
+  const f = $('f-photo').files[0]; if(!f) return;
+  try{ photoChoisie = await reduirePhoto(f); photoRetiree = false; $('f-vig').innerHTML = '<img src="' + photoChoisie.url + '" alt="">'; }
+  catch(e){ photoChoisie = null; $('f-photo').value = ''; alert('Cette image ne peut pas être lue. Essayez une photo JPG ou PNG.'); }
+});
+$('f-sansphoto').addEventListener('click', () => { photoChoisie = null; photoRetiree = true; $('f-photo').value = ''; $('f-vig').textContent = 'Aucune photo'; });
+$('f-annuler').addEventListener('click', () => $('dlg').close());
+$('f-suppr').addEventListener('click', supprimer);
+$('fiche').addEventListener('submit', validerFiche);
+
+// Reconnexion automatique sur cet appareil
+try{ const c = localStorage.getItem(CLE_LS); if(c){ $('cle').value = c; connecter(); } }catch(e){}
+</script>
+</body>
+</html>
