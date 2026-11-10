@@ -8,7 +8,7 @@ window.CATALOGUE = [
 {"id":6,"nom":"Centrifugeuse 12 trous","prix":115000,"cat":"Équipements & Appareils","desc":"Centrifugeuse de laboratoire 12 places","photo":"images/centrifugeuse.jpg"},
 {"id":7,"nom":"Centrifugeuse 6 trous","prix":50000,"cat":"Équipements & Appareils","desc":"Centrifugeuse de laboratoire 6 places","photo":"images/produit-7-1794295412149.jpg"},
 {"id":8,"nom":"Coagulometre","prix":800000,"cat":"Équipements & Appareils","desc":"Analyseur de coagulation"},
-{"id":9,"nom":"Compteur Leucocytaire","prix":45000,"cat":"Équipements & Appareils","desc":"Compteur de globules blancs différentiel"},
+{"id":9,"nom":"Compteur Leucocytaire","prix":45000,"cat":"Équipements & Appareils","desc":"Compteur de globules blancs différentiel","photo":"images/produit-9-1794295685685.jpg"},
 {"id":10,"nom":"Détecteur de veine","prix":17500,"cat":"Équipements & Appareils","desc":"Localisateur de veine à lumière infrarouge","photo":"images/produit-10-1794295377805.jpg"},
 {"id":11,"nom":"Doppler foetal grand","prix":20000,"cat":"Équipements & Appareils","desc":"Doppler fœtal grand modèle","photo":"images/doppler-foetal.jpg"},
 {"id":12,"nom":"Doppler foetal PETIT avec gel écho","prix":12500,"cat":"Équipements & Appareils","desc":"Doppler fœtal compact + gel inclus","photo":"images/doppler-foetal.jpg"},
