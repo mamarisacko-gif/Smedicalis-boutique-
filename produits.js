@@ -52,7 +52,7 @@ window.CATALOGUE = [
 {"id":52,"nom":"ASLO Latex","prix":12500,"cat":"Tests & Réactifs labo","desc":"Réactif antistreptolysine O en latex"},
 {"id":53,"nom":"Bandelette One Touch","prix":7500,"cat":"Tests & Réactifs labo","desc":"Bandelettes glycémie One Touch","photo":"images/bandelettes-glycemie.jpg"},
 {"id":54,"nom":"Bandelette Sinocare Accu-2 B/50 (rouge)","prix":7500,"cat":"Tests & Réactifs labo","desc":"Bandelettes glucomètre Accu-2, boîte 50 avec Lancettes Boîte de 50","photo":"images/produit-54-1794522744253.jpg"},
-{"id":55,"nom":"Bandelette sinocare Angel B/50 (bleu)","prix":7000,"cat":"Tests & Réactifs labo","desc":"Bandelettes glucomètre Angel, boîte 50","photo":"images/bandelettes-glycemie.jpg"},
+{"id":55,"nom":"Bandelette sinocare Angel B/50 (bleu)","prix":7000,"cat":"Tests & Réactifs labo","desc":"Bandelettes glucomètre Angel, boîte 50 et Lancette  Boîte de 50","photo":"images/produit-55-1794522779918.jpg"},
 {"id":56,"nom":"BHCG urinaire B/50 (test grossesse)","prix":2500,"cat":"Tests & Réactifs labo","desc":"Tests de grossesse urinaires, boîte 50"},
 {"id":57,"nom":"BW/syphilis bandelette B/50","prix":10000,"cat":"Tests & Réactifs labo","desc":"Test syphilis en bandelette, boîte 50"},
 {"id":58,"nom":"BW/syphilis cassette b/40 IgG IgM","prix":12500,"cat":"Tests & Réactifs labo","desc":"Test syphilis cassette IgG/IgM, boîte 40"},
