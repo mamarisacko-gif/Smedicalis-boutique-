@@ -36,7 +36,7 @@ window.CATALOGUE = [
 {"id":35,"nom":"Otoscope avec caméra","prix":9000,"cat":"Diagnostic & Instruments","desc":"Otoscope avec caméra intégrée","photo":"images/produit-35-1794522149023.jpg"},
 {"id":36,"nom":"Saturometre","prix":5000,"cat":"Diagnostic & Instruments","desc":"Oxymètre de pouls, modèle blanc","photo":"images/produit-36-1794522192857.jpg"},
 {"id":37,"nom":"Saturomètre avec cable","prix":65000,"cat":"Diagnostic & Instruments","desc":"Oxymètre professionnel avec câble patient"},
-{"id":38,"nom":"Spéculum Métallique Adulte","prix":7500,"cat":"Diagnostic & Instruments","desc":"Spéculum vaginal métallique, taille adulte"},
+{"id":38,"nom":"Spéculum Métallique Adulte","prix":7500,"cat":"Diagnostic & Instruments","desc":"Spéculum vaginal métallique, taille adulte","photo":"images/produit-38-1794522242398.jpg"},
 {"id":39,"nom":"Stéthoscope simple","prix":5000,"cat":"Diagnostic & Instruments","desc":"Stéthoscope standard biauriculaire","photo":"images/stethoscope.jpg"},
 {"id":40,"nom":"Tensiomètre Manuel professionnel Honsun","prix":17500,"cat":"Diagnostic & Instruments","desc":"Tensiomètre à mercure professionnel Honsun","photo":"images/tensiometre-manuel.jpg"},
 {"id":41,"nom":"Tensiomètre Manuel avec stethoscope","prix":9000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre manuel + stéthoscope inclus","photo":"images/tensiometre-manuel.jpg"},
