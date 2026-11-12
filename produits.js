@@ -63,7 +63,7 @@ window.CATALOGUE = [
 {"id":63,"nom":"Dengue IGG/IGM/NS1 B/25","prix":22500,"cat":"Tests & Réactifs labo","desc":"Test rapide dengue IgG/IgM/NS1, boîte 25"},
 {"id":64,"nom":"Diluant 20L","prix":50000,"cat":"Tests & Réactifs labo","desc":"Diluant pour analyseur hématologique, 20L"},
 {"id":65,"nom":"Giemsa stain 500ML","prix":15000,"cat":"Tests & Réactifs labo","desc":"Colorant Giemsa pour frottis sanguin, 500 ml"},
-{"id":66,"nom":"Glucometre sinocare angel (bleu)","prix":8000,"cat":"Tests & Réactifs labo","desc":"Glucomètre Sinocare Angel, modèle bleu"},
+{"id":66,"nom":"Glucometre sinocare angel (bleu)","prix":7500,"cat":"Tests & Réactifs labo","desc":"Glucomètre Sinocare Angel, modèle bleu","photo":"images/produit-66-1794522938937.jpg"},
 {"id":67,"nom":"Glucomètre Sinocare Accu-2 (rouge)","prix":8000,"cat":"Tests & Réactifs labo","desc":"Glucomètre Sinocare Accu-2, modèle rouge"},
 {"id":68,"nom":"Glucose 5X100ml LATEX","prix":12500,"cat":"Tests & Réactifs labo","desc":"Réactif glucose en latex, 5x100 ml"},
 {"id":69,"nom":"Groupage rhesus 4X10ml LATEX","prix":12500,"cat":"Tests & Réactifs labo","desc":"Réactif groupage sanguin ABO/Rh, 4x10 ml"},
