@@ -28,7 +28,7 @@ window.CATALOGUE = [
 {"id":27,"nom":"Vaquez Laubry","prix":65000,"cat":"Équipements & Appareils","desc":"Tensiomètre manomètre Vaquez Laubry","photo":"images/produit-27-1794521680913.jpg"},
 {"id":28,"nom":"Aspirateur manuel intra-utérin (AMIU)","prix":15000,"cat":"Diagnostic & Instruments","desc":"Dispositif d'aspiration manuelle intra-utérine","photo":"images/produit-28-1794521747024.jpg"},
 {"id":29,"nom":"Ballon de reanimation adulte","prix":17500,"cat":"Diagnostic & Instruments","desc":"Ballon AMBU pour réanimation adulte","photo":"images/ballon-reanimation.jpg"},
-{"id":30,"nom":"Lampe frontale à pile","prix":3500,"cat":"Diagnostic & Instruments","desc":"Lampe frontale chirurgicale à piles"},
+{"id":30,"nom":"Lampe frontale à pile","prix":3500,"cat":"Diagnostic & Instruments","desc":"Lampe frontale chirurgicale à piles","photo":"images/produit-30-1794521919008.jpg"},
 {"id":31,"nom":"Lampe frontale rechargeable","prix":5000,"cat":"Diagnostic & Instruments","desc":"Lampe frontale chirurgicale rechargeable"},
 {"id":32,"nom":"Laryngoscope","prix":3500,"cat":"Diagnostic & Instruments","desc":"Laryngoscope pour intubation","photo":"images/laryngoscope.jpg"},
 {"id":33,"nom":"Lunette chirurgicale","prix":1500,"cat":"Diagnostic & Instruments","desc":"Lunettes de protection chirurgicale","photo":"images/lunettes-protection.jpg"},
