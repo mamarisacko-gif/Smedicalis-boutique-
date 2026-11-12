@@ -39,7 +39,7 @@ window.CATALOGUE = [
 {"id":38,"nom":"Spéculum Métallique Adulte","prix":7500,"cat":"Diagnostic & Instruments","desc":"Spéculum vaginal métallique, taille adulte","photo":"images/produit-38-1794522242398.jpg"},
 {"id":39,"nom":"Stéthoscope simple","prix":3000,"cat":"Diagnostic & Instruments","desc":"Stéthoscope standard biauriculaire","photo":"images/stethoscope.jpg"},
 {"id":40,"nom":"Tensiomètre Manuel professionnel Honsun","prix":20000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre professionnel Honsun","photo":"images/produit-40-1794522392279.jpg"},
-{"id":41,"nom":"Tensiomètre Manuel avec stethoscope","prix":9000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre manuel + stéthoscope inclus","photo":"images/tensiometre-manuel.jpg"},
+{"id":41,"nom":"Tensiomètre Manuel avec stethoscope","prix":7500,"cat":"Diagnostic & Instruments","desc":"Tensiomètre manuel + stéthoscope inclus","photo":"images/produit-41-1794522423006.jpg"},
 {"id":42,"nom":"Tensiomètre Électronique POIGNET","prix":10000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre électronique de poignet","photo":"images/tensiometre-poignet.jpg"},
 {"id":43,"nom":"Tensiometre électronique Rechargeable","prix":10000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre électronique rechargeable USB","photo":"images/tensiometre-electronique.jpg"},
 {"id":186,"nom":"Tensiomètre Électronique Écran Couleur","prix":15000,"cat":"Diagnostic & Instruments","desc":"Bras • Écran LCD rétroéclairé 3 couleurs (normal/élevé/hypertension) • Annonce vocale • Double mémoire 2×198 • Rechargeable USB + piles AAA incluses • Brassard 22-36cm","photo":"images/tensiometre-electronique.jpg"},
