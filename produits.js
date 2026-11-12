@@ -20,7 +20,6 @@ window.CATALOGUE = [
 {"id":18,"nom":"HBA1C Pour Cassettes","prix":65000,"cat":"Équipements & Appareils","desc":"Réactif HbA1c pour cassettes — diabète","photo":"images/produit-18-1794296109262.jpg"},
 {"id":19,"nom":"Hemocue Bio aiD appareil","prix":25000,"cat":"Équipements & Appareils","desc":"Analyseur d'hémoglobine Bio aiD","photo":"images/produit-19-1794296152989.jpg"},
 {"id":20,"nom":"Hemocue Bio aiD bandelette B/50","prix":9000,"cat":"Équipements & Appareils","desc":"Bandelettes Bio aiD, boîte de 50","photo":"images/produit-20-1794296221037.jpg"},
-{"id":21,"nom":"Incubateur 80L","prix":750000,"cat":"Équipements & Appareils","desc":"Incubateur de laboratoire 80 litres"},
 {"id":22,"nom":"Lame (Microscope)","prix":1250,"cat":"Équipements & Appareils","desc":"Lames porte-objet pour microscope","photo":"images/produit-22-1794296427247.jpg"},
 {"id":23,"nom":"Microscope binoculaire Type Olympus","prix":130000,"cat":"Équipements & Appareils","desc":"Microscope binoculaire de marque Olympus","photo":"images/produit-23-1794296528846.jpg"},
 {"id":24,"nom":"Négatoscope","prix":105000,"cat":"Équipements & Appareils","desc":"Négatoscope pour lecture de radiographies"},
