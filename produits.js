@@ -40,7 +40,7 @@ window.CATALOGUE = [
 {"id":39,"nom":"Stéthoscope simple","prix":3000,"cat":"Diagnostic & Instruments","desc":"Stéthoscope standard biauriculaire","photo":"images/stethoscope.jpg"},
 {"id":40,"nom":"Tensiomètre Manuel professionnel Honsun","prix":20000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre professionnel Honsun","photo":"images/produit-40-1794522392279.jpg"},
 {"id":41,"nom":"Tensiomètre Manuel avec stethoscope","prix":7500,"cat":"Diagnostic & Instruments","desc":"Tensiomètre manuel + stéthoscope inclus","photo":"images/produit-41-1794522423006.jpg"},
-{"id":186,"nom":"Tensiomètre Électronique Écran Couleur","prix":15000,"cat":"Diagnostic & Instruments","desc":"Bras • Écran LCD rétroéclairé 3 couleurs (normal/élevé/hypertension) • Annonce vocale • Double mémoire 2×198 • Rechargeable USB + piles AAA incluses • Brassard 22-36cm","photo":"images/tensiometre-electronique.jpg"},
+{"id":186,"nom":"Tensiomètre Électronique Jaune","prix":7500,"cat":"Diagnostic & Instruments","desc":"Bras","photo":"images/produit-186-1794522499555.jpg"},
 {"id":44,"nom":"Tensiomètre Manuel Spengler triple brassard","prix":60000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre Spengler 3 tailles de brassard","photo":"images/tensiometre-manuel.jpg"},
 {"id":45,"nom":"Tensiomètre Rechargeable BP 103H","prix":20000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre électronique BP 103H rechargeable","photo":"images/tensiometre-electronique.jpg"},
 {"id":46,"nom":"Thermomètre à mercure","prix":1000,"cat":"Diagnostic & Instruments","desc":"Thermomètre clinique à mercure","photo":"images/thermometre-mercure.jpg"},
