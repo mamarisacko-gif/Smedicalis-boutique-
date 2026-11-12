@@ -33,7 +33,7 @@ window.CATALOGUE = [
 {"id":32,"nom":"Laryngoscope","prix":3500,"cat":"Diagnostic & Instruments","desc":"Laryngoscope pour intubation","photo":"images/laryngoscope.jpg"},
 {"id":33,"nom":"Lunette chirurgicale","prix":1500,"cat":"Diagnostic & Instruments","desc":"Lunettes de protection chirurgicale","photo":"images/lunettes-protection.jpg"},
 {"id":34,"nom":"Otoscope simple","prix":5000,"cat":"Diagnostic & Instruments","desc":"Otoscope pour examen auriculaire","photo":"images/produit-34-1794296729354.jpg"},
-{"id":35,"nom":"Otoscope avec caméra","prix":9000,"cat":"Diagnostic & Instruments","desc":"Otoscope avec caméra intégrée"},
+{"id":35,"nom":"Otoscope avec caméra","prix":9000,"cat":"Diagnostic & Instruments","desc":"Otoscope avec caméra intégrée","photo":"images/produit-35-1794522149023.jpg"},
 {"id":36,"nom":"Saturometre (Blanc)","prix":5000,"cat":"Diagnostic & Instruments","desc":"Oxymètre de pouls, modèle blanc","photo":"images/saturometre.jpg"},
 {"id":37,"nom":"Saturomètre avec cable","prix":65000,"cat":"Diagnostic & Instruments","desc":"Oxymètre professionnel avec câble patient"},
 {"id":38,"nom":"Spéculum Métallique Adulte","prix":7500,"cat":"Diagnostic & Instruments","desc":"Spéculum vaginal métallique, taille adulte"},
