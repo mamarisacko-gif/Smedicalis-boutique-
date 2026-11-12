@@ -38,7 +38,7 @@ window.CATALOGUE = [
 {"id":37,"nom":"Saturomètre avec cable","prix":65000,"cat":"Diagnostic & Instruments","desc":"Oxymètre professionnel avec câble patient"},
 {"id":38,"nom":"Spéculum Métallique Adulte","prix":7500,"cat":"Diagnostic & Instruments","desc":"Spéculum vaginal métallique, taille adulte","photo":"images/produit-38-1794522242398.jpg"},
 {"id":39,"nom":"Stéthoscope simple","prix":3000,"cat":"Diagnostic & Instruments","desc":"Stéthoscope standard biauriculaire","photo":"images/stethoscope.jpg"},
-{"id":40,"nom":"Tensiomètre Manuel professionnel Honsun","prix":17500,"cat":"Diagnostic & Instruments","desc":"Tensiomètre à mercure professionnel Honsun","photo":"images/tensiometre-manuel.jpg"},
+{"id":40,"nom":"Tensiomètre Manuel professionnel Honsun","prix":20000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre professionnel Honsun","photo":"images/produit-40-1794522392279.jpg"},
 {"id":41,"nom":"Tensiomètre Manuel avec stethoscope","prix":9000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre manuel + stéthoscope inclus","photo":"images/tensiometre-manuel.jpg"},
 {"id":42,"nom":"Tensiomètre Électronique POIGNET","prix":10000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre électronique de poignet","photo":"images/tensiometre-poignet.jpg"},
 {"id":43,"nom":"Tensiometre électronique Rechargeable","prix":10000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre électronique rechargeable USB","photo":"images/tensiometre-electronique.jpg"},
