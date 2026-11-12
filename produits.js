@@ -42,7 +42,7 @@ window.CATALOGUE = [
 {"id":41,"nom":"Tensiomètre Manuel avec stethoscope","prix":7500,"cat":"Diagnostic & Instruments","desc":"Tensiomètre manuel + stéthoscope inclus","photo":"images/produit-41-1794522423006.jpg"},
 {"id":186,"nom":"Tensiomètre Électronique Jaune","prix":7500,"cat":"Diagnostic & Instruments","desc":"Bras","photo":"images/produit-186-1794522499555.jpg"},
 {"id":44,"nom":"Tensiomètre Manuel Spengler triple brassard","prix":60000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre Spengler 3 tailles de brassard","photo":"images/produit-44-1794522551479.jpg"},
-{"id":45,"nom":"Tensiomètre Rechargeable BP 103H","prix":20000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre électronique BP 103H rechargeable","photo":"images/tensiometre-electronique.jpg"},
+{"id":45,"nom":"Tensiomètre Rechargeable BP 103H","prix":20000,"cat":"Diagnostic & Instruments","desc":"Tensiomètre électronique BP 103H rechargeable","photo":"images/produit-45-1794522605178.jpg"},
 {"id":46,"nom":"Thermomètre à mercure","prix":1000,"cat":"Diagnostic & Instruments","desc":"Thermomètre clinique à mercure","photo":"images/thermometre-mercure.jpg"},
 {"id":47,"nom":"Thermomètre bout flexible","prix":1500,"cat":"Diagnostic & Instruments","desc":"Thermomètre digital à sonde flexible","photo":"images/thermometre-digital.jpg"},
 {"id":48,"nom":"Thermomètre simple bout dur","prix":1000,"cat":"Diagnostic & Instruments","desc":"Thermomètre digital sonde rigide","photo":"images/thermometre-digital.jpg"},
