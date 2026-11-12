@@ -25,7 +25,7 @@ window.CATALOGUE = [
 {"id":24,"nom":"Négatoscope","prix":105000,"cat":"Équipements & Appareils","desc":"Négatoscope pour lecture de radiographies"},
 {"id":25,"nom":"Stérilisateur 22L (AUTOCLAVE)","prix":160000,"cat":"Équipements & Appareils","desc":"Autoclave stérilisateur 22 litres"},
 {"id":26,"nom":"Stérilisateur 18L","prix":145000,"cat":"Équipements & Appareils","desc":"Autoclave stérilisateur 18 litres"},
-{"id":27,"nom":"Vaquez Laubry","prix":65000,"cat":"Équipements & Appareils","desc":"Tensiomètre manomètre Vaquez Laubry","photo":"images/tensiometre-manuel.jpg"},
+{"id":27,"nom":"Vaquez Laubry","prix":65000,"cat":"Équipements & Appareils","desc":"Tensiomètre manomètre Vaquez Laubry","photo":"images/produit-27-1794521680913.jpg"},
 {"id":28,"nom":"Aspirateur manuel intra-utérin (AMIU)","prix":15000,"cat":"Diagnostic & Instruments","desc":"Dispositif d'aspiration manuelle intra-utérine"},
 {"id":29,"nom":"Ballon de reanimation adulte","prix":17500,"cat":"Diagnostic & Instruments","desc":"Ballon AMBU pour réanimation adulte","photo":"images/ballon-reanimation.jpg"},
 {"id":30,"nom":"Lampe frontale à pile","prix":3500,"cat":"Diagnostic & Instruments","desc":"Lampe frontale chirurgicale à piles"},
